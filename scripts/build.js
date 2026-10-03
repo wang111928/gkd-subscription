@@ -218,9 +218,98 @@ async function main() {
   // Supplement 3: Custom tailor rules with visibleToUser=true and explicit rule key: 0
   const extraTailoredApps = [
     {
+      id: 'com.dragon.read',
+      name: '番茄免费小说',
+      groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, anyMatches: ['[id$="tt_splash_skip_btn" || vid="tt_splash_skip_btn"][visibleToUser=true]', '[text*="跳过" || desc*="跳过"][text.length<=10 || desc.length<=10][visibleToUser=true]'] }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'com.kmxs.reader',
+      name: '七猫免费小说',
+      groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, anyMatches: ['[id$="jad_splash_skip_btn" || vid="jad_splash_skip_btn"][visibleToUser=true]', '[id$="ksad_splash_skip_right_view" || vid="ksad_splash_skip_right_view"][visibleToUser=true]', '[id$="hiad_btn_skip" || vid="hiad_btn_skip"][visibleToUser=true]', '[id$="km_splash_skip_space" || vid="km_splash_skip_space"][visibleToUser=true]', '[text*="跳过"][text.length<=10][visibleToUser=true]'] }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'com.taobao.idlefish',
+      name: '闲鱼',
+      groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, anyMatches: ['[id$="tv_skip" || vid="tv_skip"][visibleToUser=true]', '[text*="跳过" || desc*="跳过"][text.length<=10 || desc.length<=10][visibleToUser=true]'] }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'com.cainiao.wireless',
+      name: '菜鸟',
+      groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, anyMatches: ['[id$="tt_skip_btn" || vid="tt_skip_btn" || id$="tv_skip" || vid="tv_skip"][visibleToUser=true]', '[text*="跳过" || desc*="跳过"][text.length<=10 || desc.length<=10][visibleToUser=true]'] }
+          ]
+        }
+      ]
+    },
+    {
       id: 'com.zzw.october',
       name: '志愿汇',
       groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, anyMatches: ['[id$="cj_splash_skip_ll" || vid="cj_splash_skip_ll"][visibleToUser=true]', '[id$="cj_splash_skip_text" || vid="cj_splash_skip_text"][visibleToUser=true]', '[id$="jad_splash_skip_btn" || vid="jad_splash_skip_btn"][visibleToUser=true]', '[id$="anythink_myoffer_splash_skip" || vid="anythink_myoffer_splash_skip"][visibleToUser=true]', '[id$="ksad_splash_skip_left_view" || vid="ksad_splash_skip_left_view"][visibleToUser=true]', '[text*="跳过"][text.length<=10][visibleToUser=true]'] }
+          ]
+        },
         {
           key: 2,
           name: '第三方营销弹窗',
@@ -235,6 +324,19 @@ async function main() {
       id: 'com.zmzx.college.search',
       name: '大学搜题酱',
       groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, anyMatches: ['[id$="stv_skip" || vid="stv_skip"][visibleToUser=true]', '[id$="ksad_skip_view" || vid="ksad_skip_view"][visibleToUser=true]', '[id$="fanti_splash_ad_skip_container" || vid="fanti_splash_ad_skip_container"][visibleToUser=true]'] }
+          ]
+        },
         {
           key: 1,
           name: 'VIP弹窗关闭',
@@ -583,15 +685,24 @@ async function main() {
     } else {
       const existing = appMap.get(extraApp.id);
       existing.groups = existing.groups || [];
+      
+      const hasTailoredSplash = (extraApp.groups || []).some(g => g.key === 0 || (g.name && g.name.includes('开屏')));
+      if (hasTailoredSplash) {
+        const originalCount = existing.groups.length;
+        existing.groups = existing.groups.filter(g => !(g.key === 0 || g.key === -1 || (g.name && g.name.includes('开屏'))));
+        if (existing.groups.length < originalCount) {
+          console.log(`- Evicted upstream old splash groups for ${extraApp.id}`);
+        }
+      }
+
       let maxKey = existing.groups.reduce((max, g) => (typeof g.key === 'number' && g.key > max ? g.key : max), 0);
       let mergedCount = 0;
       for (const extraGroup of extraApp.groups || []) {
         const isSplash = extraGroup.key === 0 || (extraGroup.name && extraGroup.name.includes('开屏'));
-        const hasSplash = existing.groups.some(g => g.key === 0 || (g.name && g.name.includes('开屏')));
-        if (isSplash && !hasSplash) {
+        if (isSplash) {
           existing.groups.unshift(JSON.parse(JSON.stringify(extraGroup)));
           mergedCount++;
-        } else if (!isSplash) {
+        } else {
           const hasSimilar = existing.groups.some(g => g.name === extraGroup.name);
           if (!hasSimilar) {
             maxKey++;
@@ -617,6 +728,8 @@ async function main() {
         group.priorityTime = 5000;
         group.forcedTime = 5000;
         group.order = -10;
+        
+        delete group.actionDelay;
 
         let existingRules = [];
         if (group.rules) {
@@ -625,12 +738,13 @@ async function main() {
         
         let maxRuleKey = -1;
         for (const r of existingRules) {
+          delete r.actionDelay;
           if (r.key !== undefined && r.key > maxRuleKey) {
             maxRuleKey = r.key;
           }
         }
         
-        const combinedMatch = '[childCount=0][visibleToUser=true][width<500 && height<300][id$="tt_splash_skip_btn" || id$="splash_skip" || id$="ksad_splash_skip_view" || id$="btn_skip" || id$="tv_skip" || id$="ll_skip" || id$="rl_skip" || id$="skip_btn" || vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn"]';
+        const combinedMatch = '[visibleToUser=true][width<500 && height<300][id$="tt_splash_skip_btn" || id$="splash_skip" || id$="ksad_splash_skip_view" || id$="btn_skip" || id$="tv_skip" || id$="ll_skip" || id$="rl_skip" || id$="skip_btn" || vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn"]';
         
         const newRule = {
           key: Math.max(existingRules.length, maxRuleKey + 1),
@@ -703,7 +817,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 2,
+    version: 3,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -719,7 +833,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 2,
+    version: 3,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');
