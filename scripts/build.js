@@ -315,7 +315,15 @@ async function main() {
           name: '第三方营销弹窗',
           quickFind: true,
           rules: [
-            { key: 0, matches: '[id$="close" || id$="close_btn" || id$="btn_close" || id$="iv_close" || id$="ksad_close_btn" || id$="dialog_close" || id$="ad_sdk_icon_insert_close" || id$="beizi_complaint_dialog_close"][visibleToUser=true][width<300 && height<300]', actionCd: 2000 }
+            { key: 0, matches: '[id$="close" || id$="close_btn" || id$="btn_close" || id$="iv_close" || id$="ksad_close_btn" || id$="dialog_close" || id$="ad_sdk_icon_insert_close" || id$="beizi_complaint_dialog_close"][visibleToUser=true][width<500 && height<500]', actionCd: 2000 }
+          ]
+        },
+        {
+          name: '局部广告-横幅与浮标广告',
+          replaceNames: ['局部广告-浮标广告'],
+          rules: [
+            { key: 0, matches: '[id$="beizi_banner_close_iv" || vid="beizi_banner_close_iv"][visibleToUser=true]', actionCd: 2000 },
+            { key: 1, matches: '[id*="channel_banner" || vid*="channel_banner"][visibleToUser=true] + [id$="close" || vid$="close"][visibleToUser=true]', actionCd: 2000 }
           ]
         }
       ]
@@ -343,6 +351,43 @@ async function main() {
           quickFind: true,
           rules: [
             { key: 0, matches: '[vid="iv_vip_recall_close" || vid="ad_dialog_close" || vid="siv_close" || vid="siv_dialog_close" || vid="reward_ad_dialog_close"][visibleToUser=true]' }
+          ]
+        },
+        {
+          name: '局部广告-查题页面与首页广告栏',
+          replaceNames: ['局部广告-卡片广告'],
+          activityIds: ['com.zmzx.college.search.activity.main.activity.MainActivity', 'com.zmzx.college.search.activity.picsearch.activity.PicSearchResultActivity'],
+          rules: [
+            { key: 0, matches: '[vid="iv_close_ad" || id$="iv_close_ad"][visibleToUser=true]' },
+            { key: 1, matches: '[text="广告" || text="dislike"][visibleToUser=true] - [vid="close" || id$="close" || vid="iv_close" || id$="iv_close"][visibleToUser=true]' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'com.baidu.netdisk',
+      name: '百度网盘',
+      groups: [
+        {
+          key: 0,
+          name: '开屏广告',
+          matchTime: 10000,
+          actionMaximum: 1,
+          resetMatch: 'app',
+          actionCdKey: 0,
+          actionMaximumKey: 0,
+          order: -10,
+          rules: [
+            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
+          ]
+        },
+        {
+          name: '局部广告-首页及传输横幅广告',
+          replaceNames: ['局部广告-卡片广告'],
+          activityIds: ['com.baidu.netdisk.ui.MainActivity'],
+          rules: [
+            { key: 0, matches: '[vid="iv_close" || id$="iv_close"][visibleToUser=true]' },
+            { key: 1, matches: '[text="广告" || text="ad"][visibleToUser=true] - [vid="close" || id$="close" || vid="iv_close" || id$="iv_close"][visibleToUser=true]' }
           ]
         }
       ]
@@ -698,18 +743,39 @@ async function main() {
       let maxKey = existing.groups.reduce((max, g) => (typeof g.key === 'number' && g.key > max ? g.key : max), 0);
       let mergedCount = 0;
       for (const extraGroup of extraApp.groups || []) {
+        if (extraGroup.enable === undefined) {
+          extraGroup.enable = true;
+        }
         const isSplash = extraGroup.key === 0 || (extraGroup.name && extraGroup.name.includes('开屏'));
         if (isSplash) {
           existing.groups.unshift(JSON.parse(JSON.stringify(extraGroup)));
           mergedCount++;
         } else {
-          const hasSimilar = existing.groups.some(g => g.name === extraGroup.name);
-          if (!hasSimilar) {
-            maxKey++;
-            const cloned = JSON.parse(JSON.stringify(extraGroup));
-            cloned.key = maxKey;
-            existing.groups.push(cloned);
-            mergedCount++;
+          let replaced = false;
+          if (extraGroup.replaceNames && extraGroup.replaceNames.length > 0) {
+            for (let i = 0; i < existing.groups.length; i++) {
+              if (existing.groups[i].name && extraGroup.replaceNames.includes(existing.groups[i].name)) {
+                const cloned = JSON.parse(JSON.stringify(extraGroup));
+                delete cloned.replaceNames;
+                cloned.key = existing.groups[i].key;
+                existing.groups[i] = cloned;
+                replaced = true;
+                mergedCount++;
+                console.log(`* Replaced upstream group "${existing.groups[i].name}" with "${cloned.name}" for ${extraApp.id}`);
+                break;
+              }
+            }
+          }
+          if (!replaced) {
+            const hasSimilar = existing.groups.some(g => g.name === extraGroup.name);
+            if (!hasSimilar) {
+              maxKey++;
+              const cloned = JSON.parse(JSON.stringify(extraGroup));
+              delete cloned.replaceNames;
+              cloned.key = maxKey;
+              existing.groups.push(cloned);
+              mergedCount++;
+            }
           }
         }
       }
@@ -824,14 +890,21 @@ async function main() {
   console.log(`Global groups count: ${intactGlobalGroups.length} (Blacklist fully preserved)`);
 
   // Build final subscription structure
+  const modifiedCategories = (linArm.categories || []).map(c => {
+    if (c.key === 6 || c.key === 7) {
+      return { ...c, enable: true };
+    }
+    return c;
+  });
+
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 3,
+    version: 4,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
-    categories: linArm.categories || [],
+    categories: modifiedCategories,
     globalGroups: intactGlobalGroups,
     apps: sortedApps
   };
@@ -843,7 +916,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 3,
+    version: 4,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');

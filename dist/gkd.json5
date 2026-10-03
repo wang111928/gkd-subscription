@@ -1,7 +1,7 @@
 {
   "id": 88888,
   "name": "vivo X100 Pro 本机专属定制",
-  "version": 3,
+  "version": 4,
   "author": "wang111928",
   "supportUri": "https://github.com/wang111928/gkd-subscription",
   "checkUpdateUrl": "https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5",
@@ -39,12 +39,12 @@
     {
       "key": 6,
       "name": "局部广告",
-      "enable": false
+      "enable": true
     },
     {
       "key": 7,
       "name": "全屏广告",
-      "enable": false
+      "enable": true
     },
     {
       "key": 8,
@@ -6346,6 +6346,32 @@
       "name": "百度网盘",
       "groups": [
         {
+          "key": 0,
+          "name": "开屏广告",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
+            }
+          ],
+          "enable": true,
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
+        },
+        {
           "key": 1,
           "name": "全屏广告-弹窗广告",
           "desc": "点击关闭",
@@ -6371,19 +6397,22 @@
           ]
         },
         {
-          "key": 2,
-          "name": "局部广告-卡片广告",
-          "desc": "点击关闭",
+          "name": "局部广告-首页及传输横幅广告",
+          "activityIds": [
+            "com.baidu.netdisk.ui.MainActivity"
+          ],
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]"
+            },
+            {
               "key": 1,
-              "fastQuery": true,
-              "activityIds": ".video.VideoPlayerActivity",
-              "matches": "[vid=\"rl_ad_root\"] > [vid=\"iv_close\"][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/5e0625e3-ef3b-4a71-a222-54728c2274b0",
-              "snapshotUrls": "https://i.gkd.li/i/20414230"
+              "matches": "[text=\"广告\" || text=\"ad\"][visibleToUser=true] - [vid=\"close\" || id$=\"close\" || vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true,
+          "key": 2
         },
         {
           "key": 6,
@@ -6589,6 +6618,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -6825,6 +6855,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -6916,7 +6947,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -7251,6 +7283,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -7735,6 +7768,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -7835,7 +7869,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -8632,6 +8667,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -8704,7 +8740,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -9604,6 +9641,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -10335,6 +10373,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -10360,7 +10399,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -10966,6 +11006,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -10996,7 +11037,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -11452,6 +11494,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -11523,7 +11566,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -12345,6 +12389,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -13124,6 +13169,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -13199,7 +13245,8 @@
               "key": 0,
               "matches": "[text*=\"关闭\"][text.length<=10][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -16521,6 +16568,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -16594,30 +16642,23 @@
           ]
         },
         {
-          "key": 3,
-          "name": "局部广告-卡片广告",
+          "name": "局部广告-查题页面与首页广告栏",
+          "activityIds": [
+            "com.zmzx.college.search.activity.main.activity.MainActivity",
+            "com.zmzx.college.search.activity.picsearch.activity.PicSearchResultActivity"
+          ],
           "rules": [
             {
               "key": 0,
-              "fastQuery": true,
-              "activityIds": [
-                ".activity.booksearch.result.activity.SearchScanCodeResultDxActivity",
-                ".activity.booksearch.result.activity.AnswerBrowseActivity"
-              ],
-              "matches": "[vid=\"close_m_image_left_text_right_app_compliance\"]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/13849755",
-                "https://i.gkd.li/i/13929965"
-              ]
+              "matches": "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]"
             },
             {
               "key": 1,
-              "fastQuery": true,
-              "activityIds": ".activity.booksearch.result.activity.SearchScanCodeResultDxActivity",
-              "matches": "[id^=\"com.zmzx.college.search:id/ad_flag_source\"] - * > [vid=\"close\"]",
-              "snapshotUrls": "https://i.gkd.li/i/13063381"
+              "matches": "[text=\"广告\" || text=\"dislike\"][visibleToUser=true] - [vid=\"close\" || id$=\"close\" || vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true,
+          "key": 3
         },
         {
           "key": 5,
@@ -16718,7 +16759,8 @@
               "key": 0,
               "matches": "[vid=\"iv_vip_recall_close\" || vid=\"ad_dialog_close\" || vid=\"siv_close\" || vid=\"siv_dialog_close\" || vid=\"reward_ad_dialog_close\"][visibleToUser=true]"
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
@@ -16753,6 +16795,7 @@
               "actionCd": 2000
             }
           ],
+          "enable": true,
           "matchRoot": true,
           "fastQuery": true,
           "priorityTime": 5000,
@@ -16846,16 +16889,21 @@
           ]
         },
         {
-          "key": 5,
-          "name": "局部广告-浮标广告",
+          "name": "局部广告-横幅与浮标广告",
           "rules": [
             {
-              "fastQuery": true,
-              "activityIds": ".MainActivity",
-              "matches": "[vid=\"channel_banner_close_iv\"]",
-              "snapshotUrls": "https://i.gkd.li/i/23003170"
+              "key": 0,
+              "matches": "[id$=\"beizi_banner_close_iv\" || vid=\"beizi_banner_close_iv\"][visibleToUser=true]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[id*=\"channel_banner\" || vid*=\"channel_banner\"][visibleToUser=true] + [id$=\"close\" || vid$=\"close\"][visibleToUser=true]",
+              "actionCd": 2000
             }
-          ]
+          ],
+          "enable": true,
+          "key": 5
         },
         {
           "key": 6,
@@ -16864,10 +16912,11 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || id$=\"close_btn\" || id$=\"btn_close\" || id$=\"iv_close\" || id$=\"ksad_close_btn\" || id$=\"dialog_close\" || id$=\"ad_sdk_icon_insert_close\" || id$=\"beizi_complaint_dialog_close\"][visibleToUser=true][width<300 && height<300]",
+              "matches": "[id$=\"close\" || id$=\"close_btn\" || id$=\"btn_close\" || id$=\"iv_close\" || id$=\"ksad_close_btn\" || id$=\"dialog_close\" || id$=\"ad_sdk_icon_insert_close\" || id$=\"beizi_complaint_dialog_close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
-          ]
+          ],
+          "enable": true
         }
       ]
     },
