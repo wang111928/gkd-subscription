@@ -135,35 +135,8 @@
         },
         {
           "key": 2,
-          "matches": "[vid=\"tt_splash_skip_btn\"]"
-        },
-        {
-          "key": 3,
-          "matches": "[vid=\"splash_skip\"]"
-        },
-        {
-          "key": 4,
-          "matches": "[vid=\"ksad_splash_skip_view\"]"
-        },
-        {
-          "key": 5,
-          "matches": "[vid=\"btn_skip\"]"
-        },
-        {
-          "key": 6,
-          "matches": "[vid=\"tv_skip\"]"
-        },
-        {
-          "key": 7,
-          "matches": "[vid=\"ll_skip\"]"
-        },
-        {
-          "key": 8,
-          "matches": "[vid=\"rl_skip\"]"
-        },
-        {
-          "key": 9,
-          "matches": "[vid=\"skip_btn\"]"
+          "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+          "actionCd": 2000
         }
       ],
       "apps": [
@@ -5246,35 +5219,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -6201,35 +6147,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -6873,35 +6792,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -7059,35 +6951,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -7155,35 +7020,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -7378,35 +7216,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -7902,35 +7713,8 @@
             },
             {
               "key": 2,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 9,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -8584,35 +8368,8 @@
             },
             {
               "key": 3,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 9,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 10,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -8851,35 +8608,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -9525,35 +9255,8 @@
             },
             {
               "key": 2,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 9,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -10010,35 +9713,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -10524,35 +10200,8 @@
             "[text*=\"跳过\"][text.length<=10]",
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "snapshotUrls": "https://i.gkd.li/i/13407199",
@@ -10586,35 +10235,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -10658,35 +10280,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -10751,35 +10346,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -11043,35 +10611,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -11113,35 +10654,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -11396,35 +10910,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -11564,35 +11051,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -11936,35 +11396,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -12064,35 +11497,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -13184,35 +12590,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -13661,35 +13040,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -13792,35 +13144,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -14240,35 +13565,8 @@
             },
             {
               "key": 2,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 9,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -15127,35 +14425,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -15387,35 +14658,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -15884,35 +15128,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -16367,35 +15584,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "matchRoot": true,
@@ -16558,35 +15748,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -17275,35 +16438,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -17616,7 +16752,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[visibleToUser=true][width<300 && height<300]",
+              "matches": "[id$=\"close\" || id$=\"close_btn\" || id$=\"btn_close\" || id$=\"iv_close\" || id$=\"ksad_close_btn\" || id$=\"dialog_close\" || id$=\"ad_sdk_icon_insert_close\" || id$=\"beizi_complaint_dialog_close\"][visibleToUser=true][width<300 && height<300]",
               "actionCd": 2000
             }
           ]
@@ -17762,35 +16898,8 @@
             },
             {
               "key": 1,
-              "matches": "[vid=\"tt_splash_skip_btn\"]"
-            },
-            {
-              "key": 2,
-              "matches": "[vid=\"splash_skip\"]"
-            },
-            {
-              "key": 3,
-              "matches": "[vid=\"ksad_splash_skip_view\"]"
-            },
-            {
-              "key": 4,
-              "matches": "[vid=\"btn_skip\"]"
-            },
-            {
-              "key": 5,
-              "matches": "[vid=\"tv_skip\"]"
-            },
-            {
-              "key": 6,
-              "matches": "[vid=\"ll_skip\"]"
-            },
-            {
-              "key": 7,
-              "matches": "[vid=\"rl_skip\"]"
-            },
-            {
-              "key": 8,
-              "matches": "[vid=\"skip_btn\"]"
+              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
             }
           ],
           "order": -10,

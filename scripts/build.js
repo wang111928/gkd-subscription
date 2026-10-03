@@ -226,7 +226,7 @@ async function main() {
           name: '第三方营销弹窗',
           quickFind: true,
           rules: [
-            { key: 0, matches: '[visibleToUser=true][width<300 && height<300]', actionCd: 2000 }
+            { key: 0, matches: '[id$="close" || id$="close_btn" || id$="btn_close" || id$="iv_close" || id$="ksad_close_btn" || id$="dialog_close" || id$="ad_sdk_icon_insert_close" || id$="beizi_complaint_dialog_close"][visibleToUser=true][width<300 && height<300]', actionCd: 2000 }
           ]
         }
       ]
@@ -618,17 +618,6 @@ async function main() {
         group.forcedTime = 5000;
         group.order = -10;
 
-        const adSdkSkips = [
-          '[vid="tt_splash_skip_btn"]',
-          '[vid="splash_skip"]',
-          '[vid="ksad_splash_skip_view"]',
-          '[vid="btn_skip"]',
-          '[vid="tv_skip"]',
-          '[vid="ll_skip"]',
-          '[vid="rl_skip"]',
-          '[vid="skip_btn"]'
-        ];
-        
         let existingRules = [];
         if (group.rules) {
           existingRules = Array.isArray(group.rules) ? group.rules : [group.rules];
@@ -641,12 +630,15 @@ async function main() {
           }
         }
         
-        const newRules = adSdkSkips.map((match, i) => ({
-          key: Math.max(existingRules.length, maxRuleKey + 1) + i,
-          matches: match
-        }));
+        const combinedMatch = '[childCount=0][visibleToUser=true][width<500 && height<300][id$="tt_splash_skip_btn" || id$="splash_skip" || id$="ksad_splash_skip_view" || id$="btn_skip" || id$="tv_skip" || id$="ll_skip" || id$="rl_skip" || id$="skip_btn" || vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn"]';
         
-        group.rules = [...existingRules, ...newRules];
+        const newRule = {
+          key: Math.max(existingRules.length, maxRuleKey + 1),
+          matches: combinedMatch,
+          actionCd: 2000
+        };
+        
+        group.rules = [...existingRules, newRule];
       }
     }
   }
