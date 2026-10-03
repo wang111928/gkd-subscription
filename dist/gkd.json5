@@ -1,7 +1,7 @@
 {
   "id": 88888,
   "name": "vivo X100 Pro 本机专属定制",
-  "version": 2,
+  "version": 3,
   "author": "wang111928",
   "supportUri": "https://github.com/wang111928/gkd-subscription",
   "checkUpdateUrl": "https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5",
@@ -84,7 +84,7 @@
           "anyMatches": [
             "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
             "@[name$=\"View\" || name$=\"LinearLayout\"][clickable=true][childCount<2][width<300 && height<200] - [text=\"互动广告\"][visibleToUser=true]",
-            "[childCount=0][visibleToUser=true][width<500 && height<300][(text.length<10 && (text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\" || text~=\"(?is).*skip.*\") && text!*=\"视频\" && text!*=\"片头\" && text!*=\"片尾\") || (vid~=\"(?is).*skip.*\" && vid!~=\"(?is).*video.*\" && vid!~=\"(?is).*head.*\" && vid!~=\"(?is).*tail.*\" && !(text=\"帮助\") && !(text=\"取消\") && !(text*=\"退出\")) || id$=\"tt_splash_skip_btn\" || (desc.length<10 && (desc*=\"跳过\" || desc*=\"跳過\" || desc~=\"(?is).*skip.*\"))]"
+            "[visibleToUser=true][width<500 && height<300][(text.length<10 && (text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\" || text~=\"(?is).*skip.*\") && text!*=\"视频\" && text!*=\"片头\" && text!*=\"片尾\") || (vid~=\"(?is).*skip.*\" && vid!~=\"(?is).*video.*\" && vid!~=\"(?is).*head.*\" && vid!~=\"(?is).*tail.*\" && !(text=\"帮助\") && !(text=\"取消\") && !(text*=\"退出\")) || id$=\"tt_splash_skip_btn\" || (desc.length<10 && (desc*=\"跳过\" || desc*=\"跳過\" || desc~=\"(?is).*skip.*\"))]"
           ],
           "snapshotUrls": [
             "https://i.gkd.li/i/21617612",
@@ -121,8 +121,8 @@
         {
           "key": 1,
           "anyMatches": [
-            "@View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
-            "FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][childCount=0][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][childCount=0][visibleToUser=true]"
+            "@View[text=null][clickable=true][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
+            "FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][visibleToUser=true]"
           ],
           "snapshotUrls": [
             "https://i.gkd.li/i/19685971",
@@ -135,7 +135,7 @@
         },
         {
           "key": 2,
-          "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+          "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
           "actionCd": 2000
         }
       ],
@@ -5219,7 +5219,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -6147,7 +6147,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -6567,6 +6567,34 @@
       "name": "菜鸟",
       "groups": [
         {
+          "key": 0,
+          "name": "开屏广告",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
+          "rules": [
+            {
+              "key": 0,
+              "anyMatches": [
+                "[id$=\"tt_skip_btn\" || vid=\"tt_skip_btn\" || id$=\"tv_skip\" || vid=\"tv_skip\"][visibleToUser=true]",
+                "[text*=\"跳过\" || desc*=\"跳过\"][text.length<=10 || desc.length<=10][visibleToUser=true]"
+              ]
+            },
+            {
+              "key": 1,
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
+            }
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
+        },
+        {
           "key": 1,
           "name": "全屏广告-弹窗广告",
           "rules": [
@@ -6779,26 +6807,27 @@
         {
           "key": 0,
           "name": "开屏广告",
+          "quickFind": true,
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 5000,
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
           "rules": [
             {
-              "fastQuery": true,
-              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
-              "snapshotUrls": "https://i.gkd.li/i/19859692",
-              "excludeSnapshotUrls": "https://i.gkd.li/i/20949002"
+              "key": 0,
+              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
-          "order": -10,
           "matchRoot": true,
           "fastQuery": true,
+          "priorityTime": 5000,
           "forcedTime": 5000
         },
         {
@@ -6951,7 +6980,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -7020,7 +7049,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -7200,29 +7229,31 @@
       "name": "番茄免费小说",
       "groups": [
         {
-          "key": -1,
+          "key": 0,
           "name": "开屏广告",
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 5000,
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
           "rules": [
             {
-              "fastQuery": true,
-              "actionDelay": 1000,
-              "matches": "@[desc=\"跳过广告\"][clickable=true] > [text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/e36d701f-bcee-48d5-99da-1c5301101d9e",
-              "snapshotUrls": "https://i.gkd.li/i/23282793"
+              "key": 0,
+              "anyMatches": [
+                "[id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\"][visibleToUser=true]",
+                "[text*=\"跳过\" || desc*=\"跳过\"][text.length<=10 || desc.length<=10][visibleToUser=true]"
+              ]
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
-          "order": -10,
           "matchRoot": true,
           "fastQuery": true,
+          "priorityTime": 5000,
           "forcedTime": 5000
         },
         {
@@ -7684,41 +7715,30 @@
       "name": "虎牙直播",
       "groups": [
         {
-          "key": 1,
+          "key": 0,
           "name": "开屏广告",
-          "desc": "广告画面先出现,但节点最后才加载,故触发慢实属正常",
-          "fastQuery": true,
-          "forcedTime": 5000,
+          "quickFind": true,
           "matchTime": 10000,
           "actionMaximum": 1,
-          "actionMaximumKey": 0,
           "resetMatch": "app",
-          "priorityTime": 5000,
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<10][visibleToUser=true]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/30792623",
-                "https://i.gkd.li/i/30792625"
-              ]
+              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][text*=\"跳过\"][text.length<10]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/30793734",
-                "https://i.gkd.li/i/30794399"
-              ]
-            },
-            {
-              "key": 2,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
-          "order": -10,
-          "matchRoot": true
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 2,
@@ -8346,7 +8366,7 @@
             {
               "key": 1,
               "name": "①点击[跳过]",
-              "matches": "@View[id=null][text=null][childCount=0][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(7,8) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id=\"android:id/content\"]",
+              "matches": "@View[id=null][text=null][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(7,8) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id=\"android:id/content\"]",
               "exampleUrls": "https://e.gkd.li/a243e31f-f1b5-4689-8d1a-c53250be651e",
               "snapshotUrls": [
                 "https://i.gkd.li/i/17141999",
@@ -8368,7 +8388,7 @@
             },
             {
               "key": 3,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -8608,7 +8628,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -9255,7 +9275,7 @@
             },
             {
               "key": 2,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -9559,6 +9579,37 @@
       "name": "七猫免费小说",
       "groups": [
         {
+          "key": 0,
+          "name": "开屏广告",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
+          "rules": [
+            {
+              "key": 0,
+              "anyMatches": [
+                "[id$=\"jad_splash_skip_btn\" || vid=\"jad_splash_skip_btn\"][visibleToUser=true]",
+                "[id$=\"ksad_splash_skip_right_view\" || vid=\"ksad_splash_skip_right_view\"][visibleToUser=true]",
+                "[id$=\"hiad_btn_skip\" || vid=\"hiad_btn_skip\"][visibleToUser=true]",
+                "[id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"][visibleToUser=true]",
+                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+              ]
+            },
+            {
+              "key": 1,
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
+            }
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
+        },
+        {
           "key": 2,
           "name": "分段广告-阅读页面广告",
           "fastQuery": true,
@@ -9713,7 +9764,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10200,7 +10251,7 @@
             "[text*=\"跳过\"][text.length<=10]",
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10235,7 +10286,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10280,7 +10331,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10346,7 +10397,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10611,7 +10662,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10654,7 +10705,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -10897,26 +10948,27 @@
         {
           "key": 0,
           "name": "开屏广告",
+          "quickFind": true,
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 5000,
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
           "rules": [
             {
-              "fastQuery": true,
-              "matches": "[vid=\"rl_skip\"][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/b7adf229-631c-4c27-a07b-eb6e0e1854af",
-              "snapshotUrls": "https://i.gkd.li/i/21808124"
+              "key": 0,
+              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
-          "order": -10,
           "matchRoot": true,
           "fastQuery": true,
+          "priorityTime": 5000,
           "forcedTime": 5000
         },
         {
@@ -11051,7 +11103,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -11396,7 +11448,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -11497,7 +11549,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -12271,6 +12323,34 @@
       "name": "闲鱼",
       "groups": [
         {
+          "key": 0,
+          "name": "开屏广告",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
+          "rules": [
+            {
+              "key": 0,
+              "anyMatches": [
+                "[id$=\"tv_skip\" || vid=\"tv_skip\"][visibleToUser=true]",
+                "[text*=\"跳过\" || desc*=\"跳过\"][text.length<=10 || desc.length<=10][visibleToUser=true]"
+              ]
+            },
+            {
+              "key": 1,
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
+            }
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
+        },
+        {
           "key": 1,
           "name": "权限提示-通知权限",
           "matchTime": 10000,
@@ -12590,7 +12670,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -13040,7 +13120,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -13144,7 +13224,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -13540,7 +13620,6 @@
           "rules": [
             {
               "key": 0,
-              "actionDelay": 800,
               "matches": [
                 "[text=\"广告\" || text=\"廣告\"][visibleToUser=true]",
                 "[text=\"跳过\" || text=\"跳過\"][visibleToUser=true]"
@@ -13565,7 +13644,7 @@
             },
             {
               "key": 2,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -14425,7 +14504,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -14658,7 +14737,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -15128,7 +15207,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -15584,7 +15663,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -15748,7 +15827,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
@@ -16421,29 +16500,30 @@
         {
           "key": 0,
           "name": "开屏广告",
-          "fastQuery": true,
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 5000,
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
           "rules": [
             {
               "key": 0,
-              "action": "clickCenter",
-              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
-              "snapshotUrls": [
-                "https://i.gkd.li/i/12867875",
-                "https://i.gkd.li/i/16812698"
+              "anyMatches": [
+                "[id$=\"stv_skip\" || vid=\"stv_skip\"][visibleToUser=true]",
+                "[id$=\"ksad_skip_view\" || vid=\"ksad_skip_view\"][visibleToUser=true]",
+                "[id$=\"fanti_splash_ad_skip_container\" || vid=\"fanti_splash_ad_skip_container\"][visibleToUser=true]"
               ]
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],
-          "order": -10,
           "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
           "forcedTime": 5000
         },
         {
@@ -16646,6 +16726,38 @@
       "id": "com.zzw.october",
       "name": "志愿汇",
       "groups": [
+        {
+          "key": 0,
+          "name": "开屏广告",
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "app",
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
+          "rules": [
+            {
+              "key": 0,
+              "anyMatches": [
+                "[id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\"][visibleToUser=true]",
+                "[id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\"][visibleToUser=true]",
+                "[id$=\"jad_splash_skip_btn\" || vid=\"jad_splash_skip_btn\"][visibleToUser=true]",
+                "[id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\"][visibleToUser=true]",
+                "[id$=\"ksad_splash_skip_left_view\" || vid=\"ksad_splash_skip_left_view\"][visibleToUser=true]",
+                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+              ]
+            },
+            {
+              "key": 1,
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "actionCd": 2000
+            }
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
+        },
         {
           "key": 2,
           "name": "全屏广告-弹窗广告",
@@ -16898,7 +17010,7 @@
             },
             {
               "key": 1,
-              "matches": "[childCount=0][visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || id$=\"tv_skip\" || id$=\"ll_skip\" || id$=\"rl_skip\" || id$=\"skip_btn\" || vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\"]",
               "actionCd": 2000
             }
           ],

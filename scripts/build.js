@@ -739,6 +739,12 @@ async function main() {
         let maxRuleKey = -1;
         for (const r of existingRules) {
           delete r.actionDelay;
+          if (typeof r.matches === 'string') {
+            r.matches = r.matches.replace(/\[childCount=0\]/g, '');
+          }
+          if (Array.isArray(r.anyMatches)) {
+            r.anyMatches = r.anyMatches.map(m => typeof m === 'string' ? m.replace(/\[childCount=0\]/g, '') : m);
+          }
           if (r.key !== undefined && r.key > maxRuleKey) {
             maxRuleKey = r.key;
           }
