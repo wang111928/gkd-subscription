@@ -737,14 +737,18 @@ async function main() {
         }
         
         let maxRuleKey = -1;
+        function cleanSelector(val) {
+          if (typeof val === 'string') return val.replace(/\[childCount=0\]/g, '');
+          if (Array.isArray(val)) return val.map(cleanSelector);
+          return val;
+        }
+
         for (const r of existingRules) {
           delete r.actionDelay;
-          if (typeof r.matches === 'string') {
-            r.matches = r.matches.replace(/\[childCount=0\]/g, '');
-          }
-          if (Array.isArray(r.anyMatches)) {
-            r.anyMatches = r.anyMatches.map(m => typeof m === 'string' ? m.replace(/\[childCount=0\]/g, '') : m);
-          }
+          if (r.matches !== undefined) r.matches = cleanSelector(r.matches);
+          if (r.anyMatches !== undefined) r.anyMatches = cleanSelector(r.anyMatches);
+          if (r.excludeMatches !== undefined) r.excludeMatches = cleanSelector(r.excludeMatches);
+          if (r.excludeAnyMatches !== undefined) r.excludeAnyMatches = cleanSelector(r.excludeAnyMatches);
           if (r.key !== undefined && r.key > maxRuleKey) {
             maxRuleKey = r.key;
           }
@@ -887,6 +891,18 @@ async function main() {
         const found = rules.some(r => typeof r === 'object' && r.key === k);
         if (!found) {
           throw new Error(`Verification failed: ${target.id} group "${group.name}" references key ${k} but no matching rule has that key`);
+        }
+      }
+    }
+  }
+
+  // Ensure childCount=0 is 100% absent across all splash groups
+  for (const target of allTargets) {
+    for (const group of target.groups || []) {
+      if (group.name && group.name.includes('开屏')) {
+        const groupStr = JSON.stringify(group);
+        if (groupStr.includes('childCount=0')) {
+          throw new Error(`Verification failed: childCount=0 detected in splash group "${group.name}" of ${target.id}`);
         }
       }
     }
