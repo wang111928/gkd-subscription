@@ -706,7 +706,7 @@ async function main() {
     version: 2,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
-    checkUpdateUrl: 'https://fastly.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
+    checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
     categories: linArm.categories || [],
     globalGroups: intactGlobalGroups,
     apps: sortedApps
