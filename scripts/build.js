@@ -218,6 +218,34 @@ async function main() {
   // Supplement 3: Custom tailor rules with visibleToUser=true and explicit rule key: 0
   const extraTailoredApps = [
     {
+      id: 'com.zzw.october',
+      name: '志愿汇',
+      groups: [
+        {
+          key: 2,
+          name: '第三方营销弹窗',
+          quickFind: true,
+          rules: [
+            { key: 0, matches: '[visibleToUser=true][width<300 && height<300]', actionCd: 2000 }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'com.zmzx.college.search',
+      name: '大学搜题酱',
+      groups: [
+        {
+          key: 1,
+          name: 'VIP弹窗关闭',
+          quickFind: true,
+          rules: [
+            { key: 0, matches: '[vid="iv_vip_recall_close" || vid="ad_dialog_close" || vid="siv_close" || vid="siv_dialog_close" || vid="reward_ad_dialog_close"][visibleToUser=true]' }
+          ]
+        }
+      ]
+    },
+    {
       id: 'com.netease.edu.ucmooc',
       name: '中国大学MOOC',
       groups: [
@@ -581,6 +609,48 @@ async function main() {
   }
 
   // Ensure GKD specification completeness across all rules
+  function optimizeSplashRules(groups) {
+    for (const group of groups || []) {
+      if (group.name && group.name.includes('开屏')) {
+        group.matchRoot = true;
+        group.fastQuery = true;
+        group.priorityTime = 5000;
+        group.forcedTime = 5000;
+        group.order = -10;
+
+        const adSdkSkips = [
+          '[vid="tt_splash_skip_btn"]',
+          '[vid="splash_skip"]',
+          '[vid="ksad_splash_skip_view"]',
+          '[vid="btn_skip"]',
+          '[vid="tv_skip"]',
+          '[vid="ll_skip"]',
+          '[vid="rl_skip"]',
+          '[vid="skip_btn"]'
+        ];
+        
+        let existingRules = [];
+        if (group.rules) {
+          existingRules = Array.isArray(group.rules) ? group.rules : [group.rules];
+        }
+        
+        let maxRuleKey = -1;
+        for (const r of existingRules) {
+          if (r.key !== undefined && r.key > maxRuleKey) {
+            maxRuleKey = r.key;
+          }
+        }
+        
+        const newRules = adSdkSkips.map((match, i) => ({
+          key: Math.max(existingRules.length, maxRuleKey + 1) + i,
+          matches: match
+        }));
+        
+        group.rules = [...existingRules, ...newRules];
+      }
+    }
+  }
+
   function normalizeRuleKeys(groups) {
     for (const group of groups || []) {
       const referencedKeys = new Set();
@@ -605,6 +675,7 @@ async function main() {
   }
 
   for (const app of appMap.values()) {
+    optimizeSplashRules(app.groups);
     normalizeRuleKeys(app.groups);
   }
 
@@ -614,6 +685,7 @@ async function main() {
   // Global groups: Preserve complete blacklists of protected apps (banking, payment, password manager, etc.)
   // Never prune or filter apps in globalGroups, preventing newly installed sensitive apps from unintended triggers.
   const intactGlobalGroups = JSON.parse(JSON.stringify(linArm.globalGroups || []));
+  optimizeSplashRules(intactGlobalGroups);
   normalizeRuleKeys(intactGlobalGroups);
 
   // Calculate statistics
@@ -639,7 +711,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 1,
+    version: 2,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://fastly.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -655,7 +727,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 1,
+    version: 2,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');

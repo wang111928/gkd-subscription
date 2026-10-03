@@ -1,7 +1,7 @@
 {
   "id": 88888,
   "name": "vivo X100 Pro 本机专属定制",
-  "version": 1,
+  "version": 2,
   "author": "wang111928",
   "supportUri": "https://github.com/wang111928/gkd-subscription",
   "checkUpdateUrl": "https://fastly.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5",
@@ -72,10 +72,10 @@
       "matchTime": 10000,
       "actionMaximum": 2,
       "resetMatch": "app",
-      "forcedTime": 10000,
+      "forcedTime": 5000,
       "actionCdKey": 0,
       "actionMaximumKey": 0,
-      "priorityTime": 10000,
+      "priorityTime": 5000,
       "disableIfAppGroupMatch": "开屏广告",
       "rules": [
         {
@@ -132,6 +132,38 @@
             "https://i.gkd.li/i/20883248",
             "https://i.gkd.li/i/23549504"
           ]
+        },
+        {
+          "key": 2,
+          "matches": "[vid=\"tt_splash_skip_btn\"]"
+        },
+        {
+          "key": 3,
+          "matches": "[vid=\"splash_skip\"]"
+        },
+        {
+          "key": 4,
+          "matches": "[vid=\"ksad_splash_skip_view\"]"
+        },
+        {
+          "key": 5,
+          "matches": "[vid=\"btn_skip\"]"
+        },
+        {
+          "key": 6,
+          "matches": "[vid=\"tv_skip\"]"
+        },
+        {
+          "key": 7,
+          "matches": "[vid=\"ll_skip\"]"
+        },
+        {
+          "key": 8,
+          "matches": "[vid=\"rl_skip\"]"
+        },
+        {
+          "key": 9,
+          "matches": "[vid=\"skip_btn\"]"
         }
       ],
       "apps": [
@@ -1635,7 +1667,8 @@
           "id": "com.huawei.hwireader",
           "enable": true
         }
-      ]
+      ],
+      "matchRoot": true
     },
     {
       "key": 1,
@@ -5210,8 +5243,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -6123,15 +6192,49 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/983cc392-1b01-4172-bc1d-2df001baeb3d",
               "snapshotUrls": "https://i.gkd.li/i/16490985"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -6760,16 +6863,51 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/19859692",
               "excludeSnapshotUrls": "https://i.gkd.li/i/20949002"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -6908,7 +7046,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
@@ -6918,9 +7056,44 @@
               ],
               "exampleUrls": "https://e.gkd.li/69567942-f5a1-40f0-b4b6-7f8bf2348052",
               "snapshotUrls": "https://i.gkd.li/i/20649289"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -6971,7 +7144,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
@@ -6979,9 +7152,43 @@
                 "https://i.gkd.li/i/15084759",
                 "https://i.gkd.li/i/15079224"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -7160,7 +7367,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
@@ -7168,9 +7375,44 @@
               "matches": "@[desc=\"跳过广告\"][clickable=true] > [text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/e36d701f-bcee-48d5-99da-1c5301101d9e",
               "snapshotUrls": "https://i.gkd.li/i/23282793"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -7635,12 +7877,12 @@
           "name": "开屏广告",
           "desc": "广告画面先出现,但节点最后才加载,故触发慢实属正常",
           "fastQuery": true,
-          "forcedTime": 10000,
+          "forcedTime": 5000,
           "matchTime": 10000,
           "actionMaximum": 1,
           "actionMaximumKey": 0,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "key": 0,
@@ -7657,9 +7899,42 @@
                 "https://i.gkd.li/i/30793734",
                 "https://i.gkd.li/i/30794399"
               ]
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 9,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true
         },
         {
           "key": 2,
@@ -8281,7 +8556,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "match",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "activityIds": "com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$",
           "rules": [
             {
@@ -8306,9 +8581,43 @@
                 "https://i.gkd.li/i/28133622",
                 "https://i.gkd.li/i/28337298"
               ]
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 9,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 10,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 25,
@@ -8539,8 +8848,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -9161,7 +9506,7 @@
           "actionMaximum": 1,
           "resetMatch": "app",
           "actionMaximumKey": 0,
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "key": 0,
@@ -9177,9 +9522,44 @@
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/17602356",
               "excludeSnapshotUrls": "https://i.gkd.li/i/16323115"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 9,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -9620,16 +10000,51 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
               "matches": "[vid=\"splash_skip_text\"]",
               "exampleUrls": "https://e.gkd.li/5d393b9b-c327-4429-9759-8c18a097453a",
               "snapshotUrls": "https://i.gkd.li/i/17631261"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 2,
@@ -10105,9 +10520,46 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "rules": "[text*=\"跳过\"][text.length<=10]",
+          "rules": [
+            "[text*=\"跳过\"][text.length<=10]",
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
+            }
+          ],
           "snapshotUrls": "https://i.gkd.li/i/13407199",
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         }
       ]
     },
@@ -10121,7 +10573,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
@@ -10131,9 +10583,44 @@
                 "https://i.gkd.li/i/17580273",
                 "https://i.gkd.li/i/17656103"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -10168,8 +10655,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -10206,7 +10729,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "key": 0,
@@ -10225,9 +10748,43 @@
                 "https://i.gkd.li/i/16318423",
                 "https://i.gkd.li/i/30857162"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -10483,8 +11040,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -10517,8 +11110,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         }
       ]
     },
@@ -10757,16 +11386,51 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
               "matches": "[vid=\"rl_skip\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/b7adf229-631c-4c27-a07b-eb6e0e1854af",
               "snapshotUrls": "https://i.gkd.li/i/21808124"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -10897,9 +11561,44 @@
               "matches": "TextView[text*=\"跳过\"][text.length<8][clickable=true]",
               "snapshotUrls": "https://i.gkd.li/i/28997249",
               "excludeSnapshotUrls": "https://i.gkd.li/i/17827264"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -11234,8 +11933,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -11317,7 +12052,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
@@ -11326,9 +12061,44 @@
               "exampleUrls": "https://e.gkd.li/202942ce-259c-4b9d-b3b3-06afbac8145f",
               "snapshotUrls": "https://i.gkd.li/i/13216121",
               "excludeSnapshotUrls": "https://i.gkd.li/i/17811608"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -12403,7 +13173,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "matches": "@[vid*=\"close\"] > [text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
@@ -12411,9 +13181,43 @@
                 "https://i.gkd.li/i/17576743",
                 "https://i.gkd.li/i/17578451"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -12854,8 +13658,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 2,
@@ -12949,8 +13789,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -13329,8 +14205,8 @@
           "name": "开屏广告-微信小程序",
           "fastQuery": true,
           "matchTime": 10000,
-          "forcedTime": 10000,
-          "priorityTime": 10000,
+          "forcedTime": 5000,
+          "priorityTime": 5000,
           "activityIds": [
             ".plugin.appbrand.ui.AppBrandUI",
             ".plugin.appbrand.launching.AppBrandLaunchProxyUI",
@@ -13361,9 +14237,42 @@
                 "https://i.gkd.li/i/26677309",
                 "https://i.gkd.li/i/26747393"
               ]
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 9,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true
         },
         {
           "key": 11,
@@ -14194,7 +15103,7 @@
           ],
           "actionMaximumKey": 0,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "excludeActivityIds": [
@@ -14215,9 +15124,43 @@
                 "https://i.gkd.li/i/15334565"
               ],
               "key": 0
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -14424,7 +15367,7 @@
           "desc": "点击右下角跳过",
           "fastQuery": true,
           "actionMaximum": 1,
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "key": 0,
@@ -14441,9 +15384,43 @@
                 "https://i.gkd.li/i/12919195",
                 "https://i.gkd.li/i/15130235"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 17,
@@ -14897,16 +15874,51 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/6bbf28ed-9e78-4006-9225-49c07954ee45",
               "snapshotUrls": "https://i.gkd.li/i/25207240"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -15352,8 +16364,44 @@
             {
               "key": 0,
               "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
-          ]
+          ],
+          "matchRoot": true,
+          "fastQuery": true,
+          "priorityTime": 5000,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -15499,7 +16547,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "fastQuery": true,
@@ -15507,9 +16555,44 @@
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/25691473",
               "excludeSnapshotUrls": "https://i.gkd.li/i/25691480"
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "fastQuery": true,
+          "forcedTime": 5000
         },
         {
           "key": 1,
@@ -16179,7 +17262,7 @@
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "key": 0,
@@ -16189,9 +17272,43 @@
                 "https://i.gkd.li/i/12867875",
                 "https://i.gkd.li/i/16812698"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
         },
         {
           "key": 2,
@@ -16375,6 +17492,17 @@
               "snapshotUrls": "https://i.gkd.li/i/15902298"
             }
           ]
+        },
+        {
+          "key": 13,
+          "name": "VIP弹窗关闭",
+          "quickFind": true,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[vid=\"iv_vip_recall_close\" || vid=\"ad_dialog_close\" || vid=\"siv_close\" || vid=\"siv_dialog_close\" || vid=\"reward_ad_dialog_close\"][visibleToUser=true]"
+            }
+          ]
         }
       ]
     },
@@ -16478,6 +17606,18 @@
               "activityIds": ".MainActivity",
               "matches": "[vid=\"channel_banner_close_iv\"]",
               "snapshotUrls": "https://i.gkd.li/i/23003170"
+            }
+          ]
+        },
+        {
+          "key": 6,
+          "name": "第三方营销弹窗",
+          "quickFind": true,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[visibleToUser=true][width<300 && height<300]",
+              "actionCd": 2000
             }
           ]
         }
@@ -16610,7 +17750,7 @@
           "fastQuery": true,
           "actionMaximum": 2,
           "resetMatch": "app",
-          "priorityTime": 10000,
+          "priorityTime": 5000,
           "rules": [
             {
               "actionCd": 500,
@@ -16619,9 +17759,42 @@
                 "https://i.gkd.li/i/16187624",
                 "https://i.gkd.li/i/16484445"
               ]
+            },
+            {
+              "key": 1,
+              "matches": "[vid=\"tt_splash_skip_btn\"]"
+            },
+            {
+              "key": 2,
+              "matches": "[vid=\"splash_skip\"]"
+            },
+            {
+              "key": 3,
+              "matches": "[vid=\"ksad_splash_skip_view\"]"
+            },
+            {
+              "key": 4,
+              "matches": "[vid=\"btn_skip\"]"
+            },
+            {
+              "key": 5,
+              "matches": "[vid=\"tv_skip\"]"
+            },
+            {
+              "key": 6,
+              "matches": "[vid=\"ll_skip\"]"
+            },
+            {
+              "key": 7,
+              "matches": "[vid=\"rl_skip\"]"
+            },
+            {
+              "key": 8,
+              "matches": "[vid=\"skip_btn\"]"
             }
           ],
-          "order": -10
+          "order": -10,
+          "forcedTime": 5000
         },
         {
           "key": 0,
