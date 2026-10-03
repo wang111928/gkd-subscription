@@ -217,510 +217,1327 @@ async function main() {
 
   // Supplement 3: Custom tailor rules with visibleToUser=true and explicit rule key: 0
   const extraTailoredApps = [
-    {
-      id: 'com.dragon.read',
-      name: '番茄免费小说',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, anyMatches: ['[id$="tt_splash_skip_btn" || vid="tt_splash_skip_btn"][visibleToUser=true]', '[text*="跳过" || desc*="跳过"][text.length<=10 || desc.length<=10][visibleToUser=true]'] }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.kmxs.reader',
-      name: '七猫免费小说',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, anyMatches: ['[id$="jad_splash_skip_btn" || vid="jad_splash_skip_btn"][visibleToUser=true]', '[id$="ksad_splash_skip_right_view" || vid="ksad_splash_skip_right_view"][visibleToUser=true]', '[id$="hiad_btn_skip" || vid="hiad_btn_skip"][visibleToUser=true]', '[id$="km_splash_skip_space" || vid="km_splash_skip_space"][visibleToUser=true]', '[text*="跳过"][text.length<=10][visibleToUser=true]'] }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.taobao.idlefish',
-      name: '闲鱼',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, anyMatches: ['[id$="tv_skip" || vid="tv_skip"][visibleToUser=true]', '[text*="跳过" || desc*="跳过"][text.length<=10 || desc.length<=10][visibleToUser=true]'] }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.cainiao.wireless',
-      name: '菜鸟',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, anyMatches: ['[id$="tt_skip_btn" || vid="tt_skip_btn" || id$="tv_skip" || vid="tv_skip"][visibleToUser=true]', '[text*="跳过" || desc*="跳过"][text.length<=10 || desc.length<=10][visibleToUser=true]'] }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.zzw.october',
-      name: '志愿汇',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, anyMatches: ['[id$="cj_splash_skip_ll" || vid="cj_splash_skip_ll"][visibleToUser=true]', '[id$="cj_splash_skip_text" || vid="cj_splash_skip_text"][visibleToUser=true]', '[id$="jad_splash_skip_btn" || vid="jad_splash_skip_btn"][visibleToUser=true]', '[id$="anythink_myoffer_splash_skip" || vid="anythink_myoffer_splash_skip"][visibleToUser=true]', '[id$="ksad_splash_skip_left_view" || vid="ksad_splash_skip_left_view"][visibleToUser=true]', '[text*="跳过"][text.length<=10][visibleToUser=true]'] }
-          ]
-        },
-        {
-          key: 2,
-          name: '第三方营销弹窗',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[id$="close" || id$="close_btn" || id$="btn_close" || id$="iv_close" || id$="ksad_close_btn" || id$="dialog_close" || id$="ad_sdk_icon_insert_close" || id$="beizi_complaint_dialog_close"][visibleToUser=true][width<500 && height<500]', actionCd: 2000 }
-          ]
-        },
-        {
-          name: '局部广告-横幅与浮标广告',
-          replaceNames: ['局部广告-浮标广告'],
-          rules: [
-            { key: 0, matches: '[id$="beizi_banner_close_iv" || vid="beizi_banner_close_iv"][visibleToUser=true]', actionCd: 2000 },
-            { key: 1, matches: '[id*="channel_banner" || vid*="channel_banner"][visibleToUser=true] + [id$="close" || vid$="close"][visibleToUser=true]', actionCd: 2000 }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.zmzx.college.search',
-      name: '大学搜题酱',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, anyMatches: ['[id$="stv_skip" || vid="stv_skip"][visibleToUser=true]', '[id$="ksad_skip_view" || vid="ksad_skip_view"][visibleToUser=true]', '[id$="fanti_splash_ad_skip_container" || vid="fanti_splash_ad_skip_container"][visibleToUser=true]'] }
-          ]
-        },
-        {
-          key: 1,
-          name: 'VIP弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[vid="iv_vip_recall_close" || vid="ad_dialog_close" || vid="siv_close" || vid="siv_dialog_close" || vid="reward_ad_dialog_close"][visibleToUser=true]' }
-          ]
-        },
-        {
-          name: '局部广告-查题页面与首页广告栏',
-          replaceNames: ['局部广告-卡片广告'],
-          activityIds: ['com.zmzx.college.search.activity.main.activity.MainActivity', 'com.zmzx.college.search.activity.picsearch.activity.PicSearchResultActivity'],
-          rules: [
-            { key: 0, matches: '[vid="iv_close_ad" || id$="iv_close_ad"][visibleToUser=true]' },
-            { key: 1, matches: '[text="广告" || text="dislike"][visibleToUser=true] - [vid="close" || id$="close" || vid="iv_close" || id$="iv_close"][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.baidu.netdisk',
-      name: '百度网盘',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          name: '局部广告-首页及传输横幅广告',
-          replaceNames: ['局部广告-卡片广告'],
-          activityIds: ['com.baidu.netdisk.ui.MainActivity'],
-          rules: [
-            { key: 0, matches: '[vid="iv_close" || id$="iv_close"][visibleToUser=true]' },
-            { key: 1, matches: '[text="广告" || text="ad"][visibleToUser=true] - [vid="close" || id$="close" || vid="iv_close" || id$="iv_close"][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.netease.edu.ucmooc',
-      name: '中国大学MOOC',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.uu898.uuhavequality',
-      name: '悠悠有品',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '全局营销/弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.tcl.tclplus',
-      name: 'TCL',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.netease.buff',
-      name: '网易BUFF',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.fiveplay',
-      name: '5E电竞',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '通用弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.pwrd.steam.esports',
-      name: '完美电竞',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.achievo.vipshop',
-      name: '唯品会',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.sf.activity',
-      name: '顺丰速运',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.taptap',
-      name: 'TapTap',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.cctv.yangshipin.app.androidp',
-      name: '央视频',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.duowan.kiwi',
-      name: '虎牙直播',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        },
-        {
-          key: 1,
-          name: '弹窗关闭',
-          quickFind: true,
-          rules: [
-            { key: 0, matches: '[text*="关闭"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    },
-    {
-      id: 'com.netease.uu',
-      name: 'UU加速器',
-      groups: [
-        {
-          key: 0,
-          name: '开屏广告',
-          quickFind: true,
-          matchTime: 10000,
-          actionMaximum: 1,
-          resetMatch: 'app',
-          actionCdKey: 0,
-          actionMaximumKey: 0,
-          order: -10,
-          rules: [
-            { key: 0, matches: '[text*="跳过"][text.length<=10][visibleToUser=true]' }
-          ]
-        }
-      ]
-    }
-  ];
+  {
+    id: "com.zmzx.college.search",
+    name: "大学搜题酱",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            anyMatches: [
+              "[id$=\"id_skip_layout\" || vid=\"id_skip_layout\"][visibleToUser=true]",
+              "[id$=\"id_skip_button\" || vid=\"id_skip_button\"][visibleToUser=true]",
+              "[id$=\"id_skip_text\" || vid=\"id_skip_text\"][visibleToUser=true]",
+              "[id$=\"stv_skip\" || vid=\"stv_skip\"][visibleToUser=true]",
+              "[id$=\"sll_skip\" || vid=\"sll_skip\"][visibleToUser=true]",
+              "[id$=\"ksad_skip_view\" || vid=\"ksad_skip_view\"][visibleToUser=true]",
+              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            ],
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        name: "局部广告-卡片广告",
+        replaceNames: [
+          "局部广告-卡片广告"
+        ],
+        rules: [
+          {
+            key: 0,
+            anyMatches: [
+              "[vid=\"banner_close_icon\" || id$=\"banner_close_icon\"][visibleToUser=true]",
+              "[vid=\"close_search_middle\" || id$=\"close_search_middle\"][visibleToUser=true]",
+              "[vid=\"id_floating_close\" || id$=\"id_floating_close\"][visibleToUser=true]",
+              "[vid=\"common_banner_close\" || id$=\"common_banner_close\"][visibleToUser=true]",
+              "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]"
+            ],
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "VIP弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[vid=\"iv_vip_recall_close\" || vid=\"close_exit_reward\" || vid=\"close_floating\" || vid=\"siv_close\" || vid=\"siv_dialog_close\" || vid=\"ad_dialog_close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.baidu.netdisk",
+    name: "百度网盘",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            anyMatches: [
+              "[id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\"][visibleToUser=true]",
+              "[id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\"][visibleToUser=true]",
+              "[id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\"][visibleToUser=true]",
+              "[id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\"][visibleToUser=true]",
+              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            ],
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        name: "局部广告-卡片广告",
+        replaceNames: [
+          "局部广告-卡片广告"
+        ],
+        rules: [
+          {
+            key: 0,
+            anyMatches: [
+              "[vid=\"banner_item_close\" || id$=\"banner_item_close\"][visibleToUser=true]",
+              "[vid=\"ic_operation_banner_close\" || id$=\"ic_operation_banner_close\"][visibleToUser=true]",
+              "[vid=\"ad_card_close\" || id$=\"ad_card_close\"][visibleToUser=true]",
+              "[vid=\"all_tool_banner_close\" || id$=\"all_tool_banner_close\"][visibleToUser=true]",
+              "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]"
+            ],
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.zzw.october",
+    name: "志愿汇",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            anyMatches: [
+              "[id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\"][visibleToUser=true]",
+              "[id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\"][visibleToUser=true]",
+              "[id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\"][visibleToUser=true]",
+              "[id$=\"jad_splash_skip_btn\" || vid=\"jad_splash_skip_btn\"][visibleToUser=true]",
+              "[id$=\"ksad_splash_skip_left_view\" || vid=\"ksad_splash_skip_left_view\"][visibleToUser=true]",
+              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            ],
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "第三方营销弹窗",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"cj_interstitial_close_ll\" || id$=\"channel_insert_close_iv\" || id$=\"beizi_complaint_dialog_close\" || id$=\"close\" || id$=\"dialog_close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        name: "局部广告-浮标广告",
+        replaceNames: [
+          "局部广告-浮标广告"
+        ],
+        rules: [
+          {
+            key: 0,
+            anyMatches: [
+              "[id$=\"beizi_banner_close_iv\" || vid=\"beizi_banner_close_iv\"][visibleToUser=true]",
+              "[id$=\"beizi_banner_da_close\" || vid=\"beizi_banner_da_close\"][visibleToUser=true]",
+              "[id$=\"channel_banner_close_iv\" || vid=\"channel_banner_close_iv\"][visibleToUser=true]",
+              "[id$=\"iv_banner_close\" || vid=\"iv_banner_close\"][visibleToUser=true]"
+            ],
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.taobao.taobao",
+    name: "淘宝",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.cainiao.wireless",
+    name: "菜鸟",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.taobao.idlefish",
+    name: "闲鱼",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.sankuai.meituan",
+    name: "美团",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.jingdong.app.mall",
+    name: "京东",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.autonavi.minimap",
+    name: "高德地图",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "cn.wps.moffice_eng",
+    name: "WPS",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "tv.danmaku.bili",
+    name: "B站",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.quark.browser",
+    name: "夸克",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.netease.edu.ucmooc",
+    name: "中国大学MOOC",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.uu898.uuhavequality",
+    name: "悠悠有品",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.fiveplay",
+    name: "5E电竞",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.pwrd.steam.esports",
+    name: "完美电竞",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.netease.buff",
+    name: "网易BUFF",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.kmxs.reader",
+    name: "七猫免费小说",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.dragon.read",
+    name: "番茄免费小说",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.duowan.kiwi",
+    name: "虎牙直播",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.achievo.vipshop",
+    name: "唯品会",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.sf.activity",
+    name: "顺丰速运",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.midea.light.washer",
+    name: "U净",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.tcl.tclplus",
+    name: "TCL",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.cctv.yangshipin.app.androidp",
+    name: "央视频",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.vivo.wallet",
+    name: "vivo钱包",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.taptap",
+    name: "TapTap",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "com.eg.android.AlipayGphone",
+    name: "支付宝",
+    groups: [
+      {
+        key: 0,
+        name: "开屏广告",
+        matchTime: 10000,
+        actionMaximum: 1,
+        resetMatch: "app",
+        actionCdKey: 0,
+        actionMaximumKey: 0,
+        order: -10,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 1,
+        name: "横幅卡片广告关闭",
+        rules: [
+          {
+            key: 0,
+            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            actionCd: 2000
+          }
+        ]
+      },
+      {
+        key: 2,
+        name: "弹窗关闭",
+        quickFind: true,
+        rules: [
+          {
+            key: 0,
+            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            actionCd: 2000
+          }
+        ]
+      }
+    ]
+  }
+];
 
   for (const extraApp of extraTailoredApps) {
     if (!installedPkgs.has(extraApp.id)) continue;
@@ -820,7 +1637,7 @@ async function main() {
           }
         }
         
-        const combinedMatch = '[visibleToUser=true][width<500 && height<300][id$="tt_splash_skip_btn" || id$="splash_skip" || id$="ksad_splash_skip_view" || id$="btn_skip" || id$="tv_skip" || id$="ll_skip" || id$="rl_skip" || id$="skip_btn" || vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn"]';
+        const combinedMatch = '[visibleToUser=true][width<500 && height<300][id$="tt_splash_skip_btn" || vid="tt_splash_skip_btn" || id$="splash_skip" || vid="splash_skip" || id$="ksad_splash_skip_view" || vid="ksad_splash_skip_view" || id$="btn_skip" || vid="btn_skip" || id$="tv_skip" || vid="tv_skip" || id$="ll_skip" || vid="ll_skip" || id$="rl_skip" || vid="rl_skip" || id$="skip_btn" || vid="skip_btn" || id$="id_skip_layout" || vid="id_skip_layout" || id$="id_skip_button" || vid="id_skip_button" || id$="id_skip_text" || vid="id_skip_text" || id$="stv_skip" || vid="stv_skip" || id$="sll_skip" || vid="sll_skip" || id$="flash_screen_skip" || vid="flash_screen_skip" || id$="flash_screen_countdown_skip" || vid="flash_screen_countdown_skip" || id$="prologue_splash_skip_text" || vid="prologue_splash_skip_text" || id$="skip_ad_btn" || vid="skip_ad_btn" || id$="cj_splash_skip_ll" || vid="cj_splash_skip_ll" || id$="cj_splash_skip_text" || vid="cj_splash_skip_text" || id$="anythink_myoffer_splash_skip" || vid="anythink_myoffer_splash_skip" || id$="bootimage_ad_pop_skip" || vid="bootimage_ad_pop_skip" || id$="public_skip" || vid="public_skip" || id$="boot_skip" || vid="boot_skip" || id$="tb_bg_ad_skip" || vid="tb_bg_ad_skip" || id$="noah_native_splash_skip" || vid="noah_native_splash_skip" || id$="oper_skip" || vid="oper_skip" || id$="km_splash_skip_space" || vid="km_splash_skip_space"]';
         
         const newRule = {
           key: Math.max(existingRules.length, maxRuleKey + 1),
@@ -900,7 +1717,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 4,
+    version: 5,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -916,7 +1733,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 4,
+    version: 5,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');
