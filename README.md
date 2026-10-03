@@ -6,15 +6,15 @@
 
 ## 订阅地址 (复制任一链接至 GKD 客户端添加)
 
-- **国内推荐 (jsDelivr CDN)**:
+- **国内推荐 (jsDelivr 官方主源，秒级刷新)**:
   ```text
-  https://fastly.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.json5
+  https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.json5
   ```
-- **备用加速源**:
+- **固定 v2 版本直链 (永不产生缓存延迟)**:
   ```text
-  https://jsd.admincdn.com/gh/wang111928/gkd-subscription@main/dist/gkd.json5
+  https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@v2/dist/gkd.json5
   ```
-- **GitHub Raw 原源**:
+- **GitHub Raw 直链**:
   ```text
   https://raw.githubusercontent.com/wang111928/gkd-subscription/main/dist/gkd.json5
   ```
@@ -22,7 +22,7 @@
 ## 订阅信息
 
 - **ID**: `88888`
-- **版本**: `v1`
+- **版本**: `v2` (零感知秒跳瞬态加速 + 志愿汇/大学搜题酱弹窗修复)
 - **覆盖应用**: 79 款已装核心应用，506 个规则组，828 条规则
 - **性能优化**: 全量开启 `quickFind: true`，防后台隐藏节点误触 (`visibleToUser: true`)，金融支付受保护黑名单全量保留。
 
