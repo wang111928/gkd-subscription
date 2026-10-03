@@ -1,0 +1,25 @@
+1. 甘霖的GKD订阅（活跃维护）
+版本：v72，更新2026-09-24，应用约1344，规则组约2158
+链接：https://registry.npmmirror.com/@ganlinte/gkd-subscription/latest/files/dist/ganlin_gkd.json5
+
+2. Lin-arm（id667）（活跃维护）
+版本：v590，覆盖最广，应用约2108，规则组约4595
+链接：https://jsd.admincdn.com/gh/Lin-arm/GKD_subscription@main/dist/gkd.json5
+
+3. MrIc的订阅（活跃维护）
+版本：v66，规则组密集，应用约1293，规则组约2944
+链接：https://registry.npmmirror.com/gkd-mrlc/latest/files/dist/gkd.json5
+
+4. 梦念逍遥のGKD订阅（活跃维护）
+版本：v2.0.77，更新2026-08-10，应用约353，规则组约1882
+链接：https://registry.npmmirror.com/gkd-subscription/latest/files/dist/gkd.json5
+
+5. Alsouler的订阅（已停维护）
+规则组2803
+链接：https://registry.npmmirror.com/@adpro/gkd_subscription/latest/files/dist/Adpro_gkd.json5
+
+6. AIsouler（主力，活跃更新）
+链接：https://registry.npmmirror.com/@aisouler/gkd_subscription/latest/files/dist/AIsouler_gkd.json5
+
+7. 官方gkd-kit/subscription
+链接：https://registry.npmmirror.com/@gkd-kit/subscription/latest/files/dist/gkd.json
