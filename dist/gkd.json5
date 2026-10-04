@@ -6505,7 +6505,11 @@
                 "[vid=\"ic_operation_banner_close\" || id$=\"ic_operation_banner_close\"][visibleToUser=true]",
                 "[vid=\"ad_card_close\" || id$=\"ad_card_close\"][visibleToUser=true]",
                 "[vid=\"all_tool_banner_close\" || id$=\"all_tool_banner_close\"][visibleToUser=true]",
-                "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]"
+                "[vid=\"business_operate_close\" || id$=\"business_operate_close\"][visibleToUser=true]",
+                "[vid=\"close_btn\" || id$=\"close_btn\"][visibleToUser=true]",
+                "[vid=\"ad_close\" || id$=\"ad_close\"][visibleToUser=true]",
+                "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]",
+                "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
               ],
               "actionCd": 2000
             }
@@ -8051,30 +8055,43 @@
       "groups": [
         {
           "key": 0,
-          "name": "开屏广告",
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "resetMatch": "app",
-          "actionCdKey": 0,
-          "actionMaximumKey": 0,
-          "order": -10,
+          "name": "全屏广告-关闭花呗升级弹窗",
+          "fastQuery": true,
           "rules": [
             {
-              "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
-              "actionCd": 2000
+              "key": 1,
+              "activityIds": [
+                "com.alipay.android.msp.ui.views.MspContainerActivity",
+                "com.alipay.android.msp.ui.views.MspUniRenderActivity"
+              ],
+              "matches": [
+                "[text=\"根据相关法律法规要求，请尽快完成花呗升级\"]",
+                "FrameLayout > FrameLayout  > FrameLayout > [text=\"关闭\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13183946",
+                "https://i.gkd.li/i/12826077"
+              ]
             },
             {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              "key": 2,
+              "activityIds": "com.alipay.android.msp.ui.views.MspContainerActivity",
+              "matches": [
+                "[text*=\"花呗服务\"]",
+                "@[clickable=true] >2 [text=\"暂不升级，继续付款\"]"
+              ],
+              "snapshotUrls": [
+                "https://i.gkd.li/i/13631362",
+                "https://i.gkd.li/i/13857535"
+              ]
+            },
+            {
+              "key": 3,
+              "activityIds": "com.alipay.mobile.nebulax.xriver.activity.XRiverActivity",
+              "matches": "@Image[width<90] - [text=\"花呗服务升级\"] <<3 Dialog <2 View < View[index=parent.childCount.minus(1)] <n WebView <<4 [id=\"com.alipay.multiplatform.phone.xriver_integration:id/h5_pc_container\"]",
+              "snapshotUrls": "https://i.gkd.li/i/25000603"
             }
-          ],
-          "enable": true,
-          "matchRoot": true,
-          "fastQuery": true,
-          "priorityTime": 5000,
-          "forcedTime": 5000
+          ]
         },
         {
           "key": 1,
@@ -8546,6 +8563,50 @@
           ]
         },
         {
+          "key": 24,
+          "name": "开屏广告-小程序开屏广告",
+          "desc": "①点击[跳过] ②坐标点击[关闭]",
+          "fastQuery": true,
+          "matchTime": 10000,
+          "actionMaximum": 1,
+          "resetMatch": "match",
+          "priorityTime": 5000,
+          "activityIds": "com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$",
+          "rules": [
+            {
+              "key": 1,
+              "name": "①点击[跳过]",
+              "matches": "@View[id=null][text=null][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(7,8) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id=\"android:id/content\"]",
+              "exampleUrls": "https://e.gkd.li/a243e31f-f1b5-4689-8d1a-c53250be651e",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/17141999",
+                "https://i.gkd.li/i/28130319"
+              ]
+            },
+            {
+              "key": 2,
+              "name": "②坐标点击[关闭]",
+              "position": {
+                "left": "width * 0.2490",
+                "top": "width * 0.0435"
+              },
+              "matches": "View[width=getPrev(5).width] - @ViewGroup[childCount=1][height<150][getChild(0).name$=\".View\"][visibleToUser=true] < [childCount>3] < ViewGroup < LinearLayout < RelativeLayout <2 [id=\"android:id/content\"][childCount=2]",
+              "snapshotUrls": [
+                "https://i.gkd.li/i/28133622",
+                "https://i.gkd.li/i/28337298"
+              ]
+            },
+            {
+              "key": 3,
+              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "actionCd": 2000
+            }
+          ],
+          "order": -10,
+          "matchRoot": true,
+          "forcedTime": 5000
+        },
+        {
           "key": 25,
           "name": "功能类-自动授权登录",
           "rules": [
@@ -8753,31 +8814,6 @@
               "snapshotUrls": "https://i.gkd.li/i/25199524"
             }
           ]
-        },
-        {
-          "key": 35,
-          "name": "横幅卡片广告关闭",
-          "rules": [
-            {
-              "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
-              "actionCd": 2000
-            }
-          ],
-          "enable": true
-        },
-        {
-          "key": 36,
-          "name": "弹窗关闭",
-          "quickFind": true,
-          "rules": [
-            {
-              "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
-              "actionCd": 2000
-            }
-          ],
-          "enable": true
         }
       ]
     },
@@ -10470,23 +10506,57 @@
         {
           "key": 0,
           "name": "开屏广告",
-          "fastQuery": true,
           "matchTime": 10000,
           "actionMaximum": 1,
           "resetMatch": "app",
+          "actionCdKey": 0,
+          "actionMaximumKey": 0,
+          "order": -10,
           "rules": [
-            "[text*=\"跳过\"][text.length<=10]",
+            {
+              "key": 0,
+              "anyMatches": [
+                "[id$=\"skip_view\" || vid=\"skip_view\" || id$=\"background_splash_skip\" || vid=\"background_splash_skip\"][visibleToUser=true]",
+                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+              ],
+              "actionCd": 2000
+            },
             {
               "key": 1,
               "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
               "actionCd": 2000
             }
           ],
-          "snapshotUrls": "https://i.gkd.li/i/13407199",
-          "order": -10,
+          "enable": true,
           "matchRoot": true,
+          "fastQuery": true,
           "priorityTime": 5000,
           "forcedTime": 5000
+        },
+        {
+          "key": 1,
+          "name": "横幅卡片广告关闭",
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[id$=\"banner_close_img\" || vid=\"banner_close_img\" || id$=\"banner_close_img1\" || vid=\"banner_close_img1\" || id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "actionCd": 2000
+            }
+          ],
+          "enable": true
+        },
+        {
+          "key": 2,
+          "name": "弹窗关闭",
+          "quickFind": true,
+          "rules": [
+            {
+              "key": 0,
+              "matches": "[id$=\"float_image_close\" || vid=\"float_image_close\" || id$=\"close_black_icon\" || vid=\"close_black_icon\" || id$=\"close_circle\" || vid=\"close_circle\" || text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "actionCd": 2000
+            }
+          ],
+          "enable": true
         }
       ]
     },
@@ -16210,33 +16280,6 @@
       "name": "钱包",
       "groups": [
         {
-          "key": 0,
-          "name": "开屏广告",
-          "matchTime": 10000,
-          "actionMaximum": 1,
-          "resetMatch": "app",
-          "actionCdKey": 0,
-          "actionMaximumKey": 0,
-          "order": -10,
-          "rules": [
-            {
-              "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
-              "actionCd": 2000
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
-            }
-          ],
-          "enable": true,
-          "matchRoot": true,
-          "fastQuery": true,
-          "priorityTime": 5000,
-          "forcedTime": 5000
-        },
-        {
           "key": 1,
           "name": "权限提示-通知权限",
           "fastQuery": true,
@@ -16250,31 +16293,6 @@
               "snapshotUrls": "https://i.gkd.li/i/13440881"
             }
           ]
-        },
-        {
-          "key": 2,
-          "name": "横幅卡片广告关闭",
-          "rules": [
-            {
-              "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
-              "actionCd": 2000
-            }
-          ],
-          "enable": true
-        },
-        {
-          "key": 3,
-          "name": "弹窗关闭",
-          "quickFind": true,
-          "rules": [
-            {
-              "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
-              "actionCd": 2000
-            }
-          ],
-          "enable": true
         }
       ]
     },
@@ -17081,7 +17099,10 @@
                 "[vid=\"close_search_middle\" || id$=\"close_search_middle\"][visibleToUser=true]",
                 "[vid=\"id_floating_close\" || id$=\"id_floating_close\"][visibleToUser=true]",
                 "[vid=\"common_banner_close\" || id$=\"common_banner_close\"][visibleToUser=true]",
-                "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]"
+                "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]",
+                "[vid=\"close\" || id$=\"close\" || vid=\"iv_close\" || id$=\"iv_close\" || vid=\"ad_close\" || id$=\"ad_close\" || vid=\"close_icon\" || id$=\"close_icon\" || vid=\"close_m_image_left_text_right_app_compliance\"][visibleToUser=true]",
+                "[id$=\"tt_dislike_icon\" || vid=\"tt_dislike_icon\" || id$=\"ksad_ad_dislike\" || vid=\"ksad_ad_dislike\"][visibleToUser=true]",
+                "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
               ],
               "actionCd": 2000
             }

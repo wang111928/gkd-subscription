@@ -259,7 +259,10 @@ async function main() {
               "[vid=\"close_search_middle\" || id$=\"close_search_middle\"][visibleToUser=true]",
               "[vid=\"id_floating_close\" || id$=\"id_floating_close\"][visibleToUser=true]",
               "[vid=\"common_banner_close\" || id$=\"common_banner_close\"][visibleToUser=true]",
-              "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]"
+              "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]",
+              "[vid=\"close\" || id$=\"close\" || vid=\"iv_close\" || id$=\"iv_close\" || vid=\"ad_close\" || id$=\"ad_close\" || vid=\"close_icon\" || id$=\"close_icon\" || vid=\"close_m_image_left_text_right_app_compliance\"][visibleToUser=true]",
+              "[id$=\"tt_dislike_icon\" || vid=\"tt_dislike_icon\" || id$=\"ksad_ad_dislike\" || vid=\"ksad_ad_dislike\"][visibleToUser=true]",
+              "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
             ],
             actionCd: 2000
           }
@@ -319,7 +322,11 @@ async function main() {
               "[vid=\"ic_operation_banner_close\" || id$=\"ic_operation_banner_close\"][visibleToUser=true]",
               "[vid=\"ad_card_close\" || id$=\"ad_card_close\"][visibleToUser=true]",
               "[vid=\"all_tool_banner_close\" || id$=\"all_tool_banner_close\"][visibleToUser=true]",
-              "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]"
+              "[vid=\"business_operate_close\" || id$=\"business_operate_close\"][visibleToUser=true]",
+              "[vid=\"close_btn\" || id$=\"close_btn\"][visibleToUser=true]",
+              "[vid=\"ad_close\" || id$=\"ad_close\"][visibleToUser=true]",
+              "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]",
+              "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
             ],
             actionCd: 2000
           }
@@ -1262,7 +1269,7 @@ async function main() {
     ]
   },
   {
-    id: "com.midea.light.washer",
+    id: "com.midea.vm.washer",
     name: "U净",
     groups: [
       {
@@ -1277,7 +1284,10 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            anyMatches: [
+              "[id$=\"skip_view\" || vid=\"skip_view\" || id$=\"background_splash_skip\" || vid=\"background_splash_skip\"][visibleToUser=true]",
+              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
+            ],
             actionCd: 2000
           }
         ]
@@ -1288,7 +1298,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[id$=\"banner_close_img\" || vid=\"banner_close_img\" || id$=\"banner_close_img1\" || vid=\"banner_close_img1\" || id$=\"close\" || vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1300,7 +1310,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[id$=\"float_image_close\" || vid=\"float_image_close\" || id$=\"close_black_icon\" || vid=\"close_black_icon\" || id$=\"close_circle\" || vid=\"close_circle\" || text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1400,100 +1410,8 @@ async function main() {
     ]
   },
   {
-    id: "com.vivo.wallet",
-    name: "vivo钱包",
-    groups: [
-      {
-        key: 0,
-        name: "开屏广告",
-        matchTime: 10000,
-        actionMaximum: 1,
-        resetMatch: "app",
-        actionCdKey: 0,
-        actionMaximumKey: 0,
-        order: -10,
-        rules: [
-          {
-            key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
-            actionCd: 2000
-          }
-        ]
-      },
-      {
-        key: 1,
-        name: "横幅卡片广告关闭",
-        rules: [
-          {
-            key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
-            actionCd: 2000
-          }
-        ]
-      },
-      {
-        key: 2,
-        name: "弹窗关闭",
-        quickFind: true,
-        rules: [
-          {
-            key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
-            actionCd: 2000
-          }
-        ]
-      }
-    ]
-  },
-  {
     id: "com.taptap",
     name: "TapTap",
-    groups: [
-      {
-        key: 0,
-        name: "开屏广告",
-        matchTime: 10000,
-        actionMaximum: 1,
-        resetMatch: "app",
-        actionCdKey: 0,
-        actionMaximumKey: 0,
-        order: -10,
-        rules: [
-          {
-            key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
-            actionCd: 2000
-          }
-        ]
-      },
-      {
-        key: 1,
-        name: "横幅卡片广告关闭",
-        rules: [
-          {
-            key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
-            actionCd: 2000
-          }
-        ]
-      },
-      {
-        key: 2,
-        name: "弹窗关闭",
-        quickFind: true,
-        rules: [
-          {
-            key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
-            actionCd: 2000
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "com.eg.android.AlipayGphone",
-    name: "支付宝",
     groups: [
       {
         key: 0,
