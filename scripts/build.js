@@ -1820,8 +1820,8 @@ async function main() {
 
   const customSubscription = {
     id: 88888,
-    name: 'vivo X100 Pro 本机专属定制',
-    version: 10,
+    name: 'iQOO Neo 系列专属定制',
+    version: 11,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -1837,7 +1837,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 10,
+    version: 11,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');
@@ -1852,7 +1852,7 @@ async function main() {
   const verifyText = fs.readFileSync(OUTPUT_FILE, 'utf8');
   const verifyObj = safeParseJSON5(verifyText, 'output dist/gkd.json5');
 
-  if (verifyObj.id !== 88888 || verifyObj.name !== 'vivo X100 Pro 本机专属定制') {
+  if (verifyObj.id !== 88888 || verifyObj.name !== 'iQOO Neo 系列专属定制' || verifyObj.version !== 11) {
     throw new Error('Verification failed: Metadata mismatch');
   }
   if (!Array.isArray(verifyObj.apps) || verifyObj.apps.length !== sortedApps.length) {
