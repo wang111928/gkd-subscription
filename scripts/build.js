@@ -216,9 +216,9 @@ async function main() {
   }
 
   // GKD fastQuery compliant selector for splash skip buttons (首位必须为精确 vid 聚集)
-  const FAST_ID_SELECTOR = '[vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn" || vid="id_skip_layout" || vid="id_skip_button" || vid="id_skip_text" || vid="stv_skip" || vid="sll_skip" || vid="flash_screen_skip" || vid="flash_screen_countdown_skip" || vid="prologue_splash_skip_text" || vid="skip_ad_btn" || vid="cj_splash_skip_ll" || vid="cj_splash_skip_text" || vid="anythink_myoffer_splash_skip" || vid="bootimage_ad_pop_skip" || vid="public_skip" || vid="boot_skip" || vid="tb_bg_ad_skip" || vid="noah_native_splash_skip" || vid="oper_skip" || vid="km_splash_skip_space" || vid="background_splash_skip" || vid="skip_view" || vid="count_down"][visibleToUser=true][width<500 && height<300]';
+  const FAST_ID_SELECTOR = '[vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn" || vid="id_skip_layout" || vid="id_skip_button" || vid="id_skip_text" || vid="stv_skip" || vid="sll_skip" || vid="flash_screen_skip" || vid="flash_screen_countdown_skip" || vid="prologue_splash_skip_text" || vid="skip_ad_btn" || vid="cj_splash_skip_ll" || vid="cj_splash_skip_text" || vid="anythink_myoffer_splash_skip" || vid="bootimage_ad_pop_skip" || vid="public_skip" || vid="boot_skip" || vid="tb_bg_ad_skip" || vid="noah_native_splash_skip" || vid="oper_skip" || vid="km_splash_skip_space" || vid="background_splash_skip" || vid="skip_view" || vid="count_down" || vid="fanti_ad_count_and_skip_container_ex" || vid="fanti_ad_count_and_skip_container" || vid="fanti_ad_txt_skip"][visibleToUser=true][width<600 && height<400]';
 
-  const FAST_TEXT_SELECTOR = '[text*="跳过" || text*="跳 过" || text*="跳過"][text.length<=10][visibleToUser=true][width<500 && height<300]';
+  const FAST_TEXT_SELECTOR = '[text*="跳过" || text*="跳 过" || text*="跳過"][text.length<=10][visibleToUser=true][width<600 && height<400]';
 
   // Supplement 3: Custom tailor rules with visibleToUser=true and explicit rule key: 0
   const extraTailoredApps = [
@@ -244,6 +244,11 @@ async function main() {
           {
             key: 1,
             matches: FAST_TEXT_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 2,
+            matches: '@FrameLayout[vid="fanti_ad_count_and_skip_container_ex"] > [vid="fanti_ad_txt_skip"]',
             actionCd: 2000
           }
         ]
@@ -342,7 +347,8 @@ async function main() {
       {
         key: 0,
         name: "开屏广告",
-        matchTime: 10000,
+        matchTime: 1500,
+        priorityTime: 1000,
         actionMaximum: 1,
         resetMatch: "app",
         actionCdKey: 0,
@@ -365,16 +371,21 @@ async function main() {
         key: 2,
         name: "第三方营销弹窗",
         quickFind: true,
+        replaceNames: [
+          "全屏广告-弹窗广告",
+          "第三方营销弹窗"
+        ],
         rules: [
           {
             key: 0,
-            matches: "[vid=\"cj_interstitial_close_ll\" || vid=\"channel_insert_close_iv\" || vid=\"beizi_complaint_dialog_close\" || vid=\"close\" || vid=\"dialog_close\"][visibleToUser=true][width<500 && height<500]",
+            matches: '[vid="beizi_interstitial_ad_close_iv" || vid="beizi_complaint_dialog_close" || vid="cj_interstitial_close_ll" || vid="channel_insert_close_iv" || vid="close" || vid="dialog_close" || vid="iv_close" || vid="close_iv"][visibleToUser=true][width<600 && height<600]',
             actionCd: 2000
           }
         ]
       },
       {
         name: "局部广告-浮标广告",
+        quickFind: true,
         replaceNames: [
           "局部广告-浮标广告"
         ],
@@ -1632,13 +1643,19 @@ async function main() {
   }
 
   // Ensure GKD specification completeness across all rules
-  function optimizeSplashRules(groups) {
+  function optimizeSplashRules(groups, appId) {
     for (const group of groups || []) {
       if (group.name && group.name.includes('开屏')) {
         group.matchRoot = true;
         group.fastQuery = true;
-        group.priorityTime = 5000;
-        group.forcedTime = 5000;
+        if (appId === 'com.zzw.october') {
+          group.matchTime = 1500;
+          group.priorityTime = 1000;
+          delete group.forcedTime;
+        } else {
+          group.priorityTime = 5000;
+          group.forcedTime = 5000;
+        }
         group.order = -10;
         
         delete group.actionDelay;
@@ -1748,7 +1765,7 @@ async function main() {
   }
 
   for (const app of appMap.values()) {
-    optimizeSplashRules(app.groups);
+    optimizeSplashRules(app.groups, app.id);
     normalizeRuleKeys(app.groups);
   }
 
@@ -1758,7 +1775,7 @@ async function main() {
   // Global groups: Preserve complete blacklists of protected apps (banking, payment, password manager, etc.)
   // Never prune or filter apps in globalGroups, preventing newly installed sensitive apps from unintended triggers.
   const intactGlobalGroups = JSON.parse(JSON.stringify(linArm.globalGroups || []));
-  optimizeSplashRules(intactGlobalGroups);
+  optimizeSplashRules(intactGlobalGroups, 'Global');
   normalizeRuleKeys(intactGlobalGroups);
 
   // Calculate statistics
@@ -1791,7 +1808,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 6,
+    version: 7,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -1807,7 +1824,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 6,
+    version: 7,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');

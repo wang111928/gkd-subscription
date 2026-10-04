@@ -10,9 +10,9 @@
   ```text
   https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.json5
   ```
-- **固定 v6 版本直链 (永不产生缓存延迟)**:
+- **固定 v7 版本直链 (永不产生缓存延迟)**:
   ```text
-  https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@v6/dist/gkd.json5
+  https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@v7/dist/gkd.json5
   ```
 - **GitHub Raw 直链**:
   ```text
@@ -22,9 +22,9 @@
 ## 订阅信息
 
 - **ID**: `88888`
-- **版本**: `v6` (毫秒级 ID 抢跑 + 优先级反转零感知秒跳 + Private DNS 底层阻断)
-- **覆盖应用**: 78 款已装核心应用，548 个规则组，917 条规则
-- **性能优化**: 严格符合 GKD 官方 fastQuery 规范（精确 `vid` 聚集抢跑首层），毫秒级优先级反转结构，纯文本兜底，全量防误触 (`visibleToUser: true`)，金融支付受保护黑名单全量保留。
+- **版本**: `v7` (大学搜题酱 1.5K 屏开屏广告秒跳根治 + 志愿汇弹窗浮标横幅彻底清剿与调度优化)
+- **覆盖应用**: 78 款已装核心应用，548 个规则组，918 条规则
+- **性能优化**: 严格符合 GKD 官方 fastQuery 规范（精确 `vid` 聚集抢跑首层，[width<600 && height<400] 宽屏放宽），毫秒级优先级反转结构，纯文本兜底，全量防误触 (`visibleToUser: true`)，金融支付受保护黑名单全量保留。
 
 ## 本地更新与构建
 
