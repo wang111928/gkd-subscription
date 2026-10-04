@@ -218,7 +218,7 @@ async function main() {
   // GKD fastQuery compliant selector for splash skip buttons (首位必须为精确 vid 聚集)
   const FAST_ID_SELECTOR = '[vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="ksad_splash_skip_left_view" || vid="ksad_splash_skip_right_view" || vid="ksad_skip_text" || vid="ksad_skip_view_area" || vid="ksad_splash_circle_skip_view" || vid="ksad_splash_endcard_close" || vid="btn_skip" || vid="tv_skip" || vid="tvSkip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn" || vid="id_skip_layout" || vid="id_skip_button" || vid="id_skip_text" || vid="stv_skip" || vid="sll_skip" || vid="flash_screen_skip" || vid="flash_screen_countdown_skip" || vid="prologue_splash_skip_text" || vid="skip_ad_btn" || vid="cj_splash_skip_ll" || vid="cj_splash_skip_text" || vid="anythink_myoffer_splash_skip" || vid="adky_myoffer_splash_skip" || vid="bootimage_ad_pop_skip" || vid="public_skip" || vid="boot_skip" || vid="tb_bg_ad_skip" || vid="noah_native_splash_skip" || vid="oper_skip" || vid="km_splash_skip_space" || vid="background_splash_skip" || vid="skip_view" || vid="count_down" || vid="fanti_ad_count_and_skip_container_ex" || vid="fanti_ad_count_and_skip_container" || vid="fanti_ad_txt_skip" || vid="ms_skipView" || vid="ms_skipView_container" || vid="beizi_skip_ad" || vid="octopus_skip_ad" || vid="ptgSkipLayout" || vid="ptgSplashSkipFl" || vid="tianmu_widget_skip_view" || vid="tianmu_library_iv_skip" || vid="jad_splash_skip_btn" || vid="common_skip" || vid="btn_splash_skip" || vid="skip" || vid="fl_gdt_splash_skip" || vid="tv_gdt_splash_skip" || vid="kcfw_splash_skip_view" || vid="kcfw_skip_view" || vid="kcfw_skip_view_area" || vid="kcfw_detainment_skip" || vid="behavior_skipCollapsed" || vid="skipCollapsed" || vid="skipped" || vid="sdm_myoffer_splash_skip" || vid="yf_splash_close_v1" || vid="yf_skip_des"][visibleToUser=true][width<600 && height<400]';
 
-  const FAST_TEXT_SELECTOR = '[text*="跳过" || text*="跳 过" || text*="跳過"][text.length<=10][visibleToUser=true][width<600 && height<400]';
+  const FAST_TEXT_SELECTOR = '[text*="跳过" || text*="跳 过" || text*="跳過" || text*="Skip" || text*="SKIP"][text.length<=10][visibleToUser=true][width<600 && height<400]';
 
   // Supplement 3: Custom tailor rules with visibleToUser=true and explicit rule key: 0
   const extraTailoredApps = [
@@ -1648,17 +1648,15 @@ async function main() {
       if (group.name && group.name.includes('开屏')) {
         group.matchRoot = true;
         delete group.fastQuery;
-        if (appId === 'com.zzw.october') {
-          group.matchTime = 10000;
-          group.priorityTime = 3000;
-          delete group.forcedTime;
-        } else {
-          group.priorityTime = 5000;
-          group.forcedTime = 5000;
-        }
+        group.matchTime = 10000;
+        group.priorityTime = 10000;
+        group.forcedTime = 10000;
+        group.actionMaximum = 2;
         group.order = -10;
         
         delete group.actionDelay;
+        delete group.actionCdKey;
+        delete group.actionMaximumKey;
 
         let existingRules = [];
         if (group.rules) {
@@ -1683,6 +1681,12 @@ async function main() {
         function cleanRule(r) {
           const cloned = JSON.parse(JSON.stringify(r));
           delete cloned.actionDelay;
+          if (cloned.action !== 'back') {
+            cloned.action = 'clickCenter';
+          }
+          if (cloned.actionCd === undefined || cloned.actionCd > 1000) {
+            cloned.actionCd = 1000;
+          }
           if (cloned.matches !== undefined) cloned.matches = cleanSelector(cloned.matches);
           if (cloned.anyMatches !== undefined) cloned.anyMatches = cleanSelector(cloned.anyMatches);
           if (cloned.excludeMatches !== undefined) cloned.excludeMatches = cleanSelector(cloned.excludeMatches);
@@ -1704,7 +1708,7 @@ async function main() {
             const isSimpleText = m.startsWith('[text*="跳过"') &&
               !m.includes('<') && !m.includes('>') && !m.includes('+') && !m.includes('-') &&
               !m.includes('vid=') && !m.includes('id=') && !m.includes('desc=') && !m.includes('name=');
-            const hasExtra = r.position || r.action || r.excludeActivityIds || r.activityIds;
+            const hasExtra = r.position || (r.action && r.action !== 'clickCenter') || r.excludeActivityIds || r.activityIds;
             if (isSimpleText && !hasExtra) return true;
           }
           return false;
@@ -1717,18 +1721,26 @@ async function main() {
         const rule0 = {
           key: 0,
           fastQuery: true,
+          action: 'clickCenter',
           matches: FAST_ID_SELECTOR,
-          actionCd: 2000
+          actionCd: 1000
         };
 
         const rule1 = {
           key: 1,
+          action: 'clickCenter',
           matches: FAST_TEXT_SELECTOR,
-          actionCd: 2000
+          actionCd: 1000
         };
 
         const reKeyedExtra = extraRules.map((r, idx) => {
           r.key = idx + 2;
+          if (r.action !== 'back') {
+            r.action = 'clickCenter';
+          }
+          if (r.actionCd === undefined || r.actionCd > 1000) {
+            r.actionCd = 1000;
+          }
           return r;
         });
 
@@ -1809,7 +1821,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 9,
+    version: 10,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -1825,7 +1837,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 9,
+    version: 10,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');
@@ -1909,6 +1921,14 @@ async function main() {
         const groupStr = JSON.stringify(group);
         if (groupStr.includes('id$=')) {
           throw new Error(`Verification failed: Residue of 'id$=' detected in splash group "${group.name}" of ${target.id}`);
+        }
+
+        // Verify action: 'clickCenter' on all splash rules
+        for (let i = 0; i < rules.length; i++) {
+          const r = rules[i];
+          if (r.action !== 'clickCenter' && r.action !== 'back') {
+            throw new Error(`Verification failed: Splash rule ${i} in "${group.name}" of ${target.id} does not have action: 'clickCenter' (got: "${r.action}")`);
+          }
         }
       }
     }
