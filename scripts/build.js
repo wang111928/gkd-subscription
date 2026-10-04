@@ -216,7 +216,7 @@ async function main() {
   }
 
   // GKD fastQuery compliant selector for splash skip buttons (首位必须为精确 vid 聚集)
-  const FAST_ID_SELECTOR = '[vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn" || vid="id_skip_layout" || vid="id_skip_button" || vid="id_skip_text" || vid="stv_skip" || vid="sll_skip" || vid="flash_screen_skip" || vid="flash_screen_countdown_skip" || vid="prologue_splash_skip_text" || vid="skip_ad_btn" || vid="cj_splash_skip_ll" || vid="cj_splash_skip_text" || vid="anythink_myoffer_splash_skip" || vid="bootimage_ad_pop_skip" || vid="public_skip" || vid="boot_skip" || vid="tb_bg_ad_skip" || vid="noah_native_splash_skip" || vid="oper_skip" || vid="km_splash_skip_space" || vid="background_splash_skip" || vid="skip_view" || vid="count_down" || vid="fanti_ad_count_and_skip_container_ex" || vid="fanti_ad_count_and_skip_container" || vid="fanti_ad_txt_skip" || vid="ms_skipView" || vid="ms_skipView_container" || vid="beizi_skip_ad" || vid="octopus_skip_ad" || vid="ptgSkipLayout" || vid="ptgSplashSkipFl" || vid="tianmu_widget_skip_view" || vid="tianmu_library_iv_skip" || vid="jad_splash_skip_btn"][visibleToUser=true][width<600 && height<400]';
+  const FAST_ID_SELECTOR = '[vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="ksad_splash_skip_left_view" || vid="ksad_splash_skip_right_view" || vid="ksad_skip_text" || vid="ksad_skip_view_area" || vid="ksad_splash_circle_skip_view" || vid="ksad_splash_endcard_close" || vid="btn_skip" || vid="tv_skip" || vid="tvSkip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn" || vid="id_skip_layout" || vid="id_skip_button" || vid="id_skip_text" || vid="stv_skip" || vid="sll_skip" || vid="flash_screen_skip" || vid="flash_screen_countdown_skip" || vid="prologue_splash_skip_text" || vid="skip_ad_btn" || vid="cj_splash_skip_ll" || vid="cj_splash_skip_text" || vid="anythink_myoffer_splash_skip" || vid="adky_myoffer_splash_skip" || vid="bootimage_ad_pop_skip" || vid="public_skip" || vid="boot_skip" || vid="tb_bg_ad_skip" || vid="noah_native_splash_skip" || vid="oper_skip" || vid="km_splash_skip_space" || vid="background_splash_skip" || vid="skip_view" || vid="count_down" || vid="fanti_ad_count_and_skip_container_ex" || vid="fanti_ad_count_and_skip_container" || vid="fanti_ad_txt_skip" || vid="ms_skipView" || vid="ms_skipView_container" || vid="beizi_skip_ad" || vid="octopus_skip_ad" || vid="ptgSkipLayout" || vid="ptgSplashSkipFl" || vid="tianmu_widget_skip_view" || vid="tianmu_library_iv_skip" || vid="jad_splash_skip_btn" || vid="common_skip" || vid="btn_splash_skip" || vid="skip" || vid="fl_gdt_splash_skip" || vid="tv_gdt_splash_skip" || vid="kcfw_splash_skip_view" || vid="kcfw_skip_view" || vid="kcfw_skip_view_area" || vid="kcfw_detainment_skip" || vid="behavior_skipCollapsed" || vid="skipCollapsed" || vid="skipped" || vid="sdm_myoffer_splash_skip" || vid="yf_splash_close_v1" || vid="yf_skip_des"][visibleToUser=true][width<600 && height<400]';
 
   const FAST_TEXT_SELECTOR = '[text*="跳过" || text*="跳 过" || text*="跳過"][text.length<=10][visibleToUser=true][width<600 && height<400]';
 
@@ -347,8 +347,8 @@ async function main() {
       {
         key: 0,
         name: "开屏广告",
-        matchTime: 3000,
-        priorityTime: 2000,
+        matchTime: 10000,
+        priorityTime: 3000,
         actionMaximum: 1,
         resetMatch: "app",
         actionCdKey: 0,
@@ -1647,10 +1647,10 @@ async function main() {
     for (const group of groups || []) {
       if (group.name && group.name.includes('开屏')) {
         group.matchRoot = true;
-        group.fastQuery = true;
+        delete group.fastQuery;
         if (appId === 'com.zzw.october') {
-          group.matchTime = 3000;
-          group.priorityTime = 2000;
+          group.matchTime = 10000;
+          group.priorityTime = 3000;
           delete group.forcedTime;
         } else {
           group.priorityTime = 5000;
@@ -1716,6 +1716,7 @@ async function main() {
 
         const rule0 = {
           key: 0,
+          fastQuery: true,
           matches: FAST_ID_SELECTOR,
           actionCd: 2000
         };
@@ -1808,7 +1809,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 8,
+    version: 9,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -1824,7 +1825,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 8,
+    version: 9,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');
