@@ -215,6 +215,11 @@ async function main() {
     }
   }
 
+  // GKD fastQuery compliant selector for splash skip buttons (首位必须为精确 vid 聚集)
+  const FAST_ID_SELECTOR = '[vid="tt_splash_skip_btn" || vid="splash_skip" || vid="ksad_splash_skip_view" || vid="btn_skip" || vid="tv_skip" || vid="ll_skip" || vid="rl_skip" || vid="skip_btn" || vid="id_skip_layout" || vid="id_skip_button" || vid="id_skip_text" || vid="stv_skip" || vid="sll_skip" || vid="flash_screen_skip" || vid="flash_screen_countdown_skip" || vid="prologue_splash_skip_text" || vid="skip_ad_btn" || vid="cj_splash_skip_ll" || vid="cj_splash_skip_text" || vid="anythink_myoffer_splash_skip" || vid="bootimage_ad_pop_skip" || vid="public_skip" || vid="boot_skip" || vid="tb_bg_ad_skip" || vid="noah_native_splash_skip" || vid="oper_skip" || vid="km_splash_skip_space" || vid="background_splash_skip" || vid="skip_view" || vid="count_down"][visibleToUser=true][width<500 && height<300]';
+
+  const FAST_TEXT_SELECTOR = '[text*="跳过" || text*="跳 过" || text*="跳過"][text.length<=10][visibleToUser=true][width<500 && height<300]';
+
   // Supplement 3: Custom tailor rules with visibleToUser=true and explicit rule key: 0
   const extraTailoredApps = [
   {
@@ -233,15 +238,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            anyMatches: [
-              "[id$=\"id_skip_layout\" || vid=\"id_skip_layout\"][visibleToUser=true]",
-              "[id$=\"id_skip_button\" || vid=\"id_skip_button\"][visibleToUser=true]",
-              "[id$=\"id_skip_text\" || vid=\"id_skip_text\"][visibleToUser=true]",
-              "[id$=\"stv_skip\" || vid=\"stv_skip\"][visibleToUser=true]",
-              "[id$=\"sll_skip\" || vid=\"sll_skip\"][visibleToUser=true]",
-              "[id$=\"ksad_skip_view\" || vid=\"ksad_skip_view\"][visibleToUser=true]",
-              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-            ],
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -255,13 +257,13 @@ async function main() {
           {
             key: 0,
             anyMatches: [
-              "[vid=\"banner_close_icon\" || id$=\"banner_close_icon\"][visibleToUser=true]",
-              "[vid=\"close_search_middle\" || id$=\"close_search_middle\"][visibleToUser=true]",
-              "[vid=\"id_floating_close\" || id$=\"id_floating_close\"][visibleToUser=true]",
-              "[vid=\"common_banner_close\" || id$=\"common_banner_close\"][visibleToUser=true]",
-              "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]",
-              "[vid=\"close\" || id$=\"close\" || vid=\"iv_close\" || id$=\"iv_close\" || vid=\"ad_close\" || id$=\"ad_close\" || vid=\"close_icon\" || id$=\"close_icon\" || vid=\"close_m_image_left_text_right_app_compliance\"][visibleToUser=true]",
-              "[id$=\"tt_dislike_icon\" || vid=\"tt_dislike_icon\" || id$=\"ksad_ad_dislike\" || vid=\"ksad_ad_dislike\"][visibleToUser=true]",
+              "[vid=\"banner_close_icon\"][visibleToUser=true]",
+              "[vid=\"close_search_middle\"][visibleToUser=true]",
+              "[vid=\"id_floating_close\"][visibleToUser=true]",
+              "[vid=\"common_banner_close\"][visibleToUser=true]",
+              "[vid=\"iv_close_ad\"][visibleToUser=true]",
+              "[vid=\"close\" || vid=\"iv_close\" || vid=\"ad_close\" || vid=\"close_icon\" || vid=\"close_m_image_left_text_right_app_compliance\"][visibleToUser=true]",
+              "[vid=\"tt_dislike_icon\" || vid=\"ksad_ad_dislike\"][visibleToUser=true]",
               "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
             ],
             actionCd: 2000
@@ -298,13 +300,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            anyMatches: [
-              "[id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\"][visibleToUser=true]",
-              "[id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\"][visibleToUser=true]",
-              "[id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\"][visibleToUser=true]",
-              "[id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\"][visibleToUser=true]",
-              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-            ],
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -318,14 +319,14 @@ async function main() {
           {
             key: 0,
             anyMatches: [
-              "[vid=\"banner_item_close\" || id$=\"banner_item_close\"][visibleToUser=true]",
-              "[vid=\"ic_operation_banner_close\" || id$=\"ic_operation_banner_close\"][visibleToUser=true]",
-              "[vid=\"ad_card_close\" || id$=\"ad_card_close\"][visibleToUser=true]",
-              "[vid=\"all_tool_banner_close\" || id$=\"all_tool_banner_close\"][visibleToUser=true]",
-              "[vid=\"business_operate_close\" || id$=\"business_operate_close\"][visibleToUser=true]",
-              "[vid=\"close_btn\" || id$=\"close_btn\"][visibleToUser=true]",
-              "[vid=\"ad_close\" || id$=\"ad_close\"][visibleToUser=true]",
-              "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]",
+              "[vid=\"banner_item_close\"][visibleToUser=true]",
+              "[vid=\"ic_operation_banner_close\"][visibleToUser=true]",
+              "[vid=\"ad_card_close\"][visibleToUser=true]",
+              "[vid=\"all_tool_banner_close\"][visibleToUser=true]",
+              "[vid=\"business_operate_close\"][visibleToUser=true]",
+              "[vid=\"close_btn\"][visibleToUser=true]",
+              "[vid=\"ad_close\"][visibleToUser=true]",
+              "[vid=\"iv_close\"][visibleToUser=true]",
               "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
             ],
             actionCd: 2000
@@ -350,14 +351,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            anyMatches: [
-              "[id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\"][visibleToUser=true]",
-              "[id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\"][visibleToUser=true]",
-              "[id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\"][visibleToUser=true]",
-              "[id$=\"jad_splash_skip_btn\" || vid=\"jad_splash_skip_btn\"][visibleToUser=true]",
-              "[id$=\"ksad_splash_skip_left_view\" || vid=\"ksad_splash_skip_left_view\"][visibleToUser=true]",
-              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-            ],
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -369,7 +368,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"cj_interstitial_close_ll\" || id$=\"channel_insert_close_iv\" || id$=\"beizi_complaint_dialog_close\" || id$=\"close\" || id$=\"dialog_close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[vid=\"cj_interstitial_close_ll\" || vid=\"channel_insert_close_iv\" || vid=\"beizi_complaint_dialog_close\" || vid=\"close\" || vid=\"dialog_close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -383,10 +382,10 @@ async function main() {
           {
             key: 0,
             anyMatches: [
-              "[id$=\"beizi_banner_close_iv\" || vid=\"beizi_banner_close_iv\"][visibleToUser=true]",
-              "[id$=\"beizi_banner_da_close\" || vid=\"beizi_banner_da_close\"][visibleToUser=true]",
-              "[id$=\"channel_banner_close_iv\" || vid=\"channel_banner_close_iv\"][visibleToUser=true]",
-              "[id$=\"iv_banner_close\" || vid=\"iv_banner_close\"][visibleToUser=true]"
+              "[vid=\"beizi_banner_close_iv\"][visibleToUser=true]",
+              "[vid=\"beizi_banner_da_close\"][visibleToUser=true]",
+              "[vid=\"channel_banner_close_iv\"][visibleToUser=true]",
+              "[vid=\"iv_banner_close\"][visibleToUser=true]"
             ],
             actionCd: 2000
           }
@@ -410,7 +409,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -421,7 +425,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -433,7 +437,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -456,7 +460,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -467,7 +476,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -479,7 +488,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -502,7 +511,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -513,7 +527,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -525,7 +539,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -548,7 +562,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -559,7 +578,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -571,7 +590,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -594,7 +613,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -605,7 +629,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -617,7 +641,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -640,7 +664,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -651,7 +680,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -663,7 +692,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -686,7 +715,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -697,7 +731,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -709,7 +743,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -732,7 +766,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -743,7 +782,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -755,7 +794,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -778,7 +817,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -789,7 +833,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -801,7 +845,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -824,7 +868,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -835,7 +884,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -847,7 +896,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -870,7 +919,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -881,7 +935,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -893,7 +947,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -916,7 +970,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -927,7 +986,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -939,7 +998,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -962,7 +1021,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -973,7 +1037,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -985,7 +1049,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1008,7 +1072,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1019,7 +1088,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1031,7 +1100,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1054,7 +1123,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1065,7 +1139,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1077,7 +1151,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1100,7 +1174,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1111,7 +1190,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1123,7 +1202,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1146,7 +1225,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1157,7 +1241,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1169,7 +1253,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1192,7 +1276,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1203,7 +1292,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1215,7 +1304,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1238,7 +1327,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1249,7 +1343,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1261,7 +1355,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1284,10 +1378,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            anyMatches: [
-              "[id$=\"skip_view\" || vid=\"skip_view\" || id$=\"background_splash_skip\" || vid=\"background_splash_skip\"][visibleToUser=true]",
-              "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-            ],
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1298,7 +1394,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"banner_close_img\" || vid=\"banner_close_img\" || id$=\"banner_close_img1\" || vid=\"banner_close_img1\" || id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"banner_close_img\" || vid=\"banner_close_img1\" || vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1310,7 +1406,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"float_image_close\" || vid=\"float_image_close\" || id$=\"close_black_icon\" || vid=\"close_black_icon\" || id$=\"close_circle\" || vid=\"close_circle\" || text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[vid=\"float_image_close\" || vid=\"close_black_icon\" || vid=\"close_circle\" || text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1333,7 +1429,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1344,7 +1445,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1356,7 +1457,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1379,7 +1480,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1390,7 +1496,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1402,7 +1508,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1425,7 +1531,12 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+            matches: FAST_ID_SELECTOR,
+            actionCd: 2000
+          },
+          {
+            key: 1,
+            matches: FAST_TEXT_SELECTOR,
             actionCd: 2000
           }
         ]
@@ -1436,7 +1547,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+            matches: "[vid=\"close\"][visibleToUser=true]",
             actionCd: 2000
           }
         ]
@@ -1448,7 +1559,7 @@ async function main() {
         rules: [
           {
             key: 0,
-            matches: "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+            matches: "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
             actionCd: 2000
           }
         ]
@@ -1537,33 +1648,78 @@ async function main() {
           existingRules = Array.isArray(group.rules) ? group.rules : [group.rules];
         }
         
-        let maxRuleKey = -1;
         function cleanSelector(val) {
-          if (typeof val === 'string') return val.replace(/\[childCount=0\]/g, '');
+          if (typeof val === 'string') {
+            return val
+              .replace(/\[childCount=0\]/g, '')
+              .replace(/id\$="([^"]+)"\s*\|\|\s*vid="\1"/g, 'vid="$1"')
+              .replace(/vid="([^"]+)"\s*\|\|\s*id\$="\1"/g, 'vid="$1"')
+              .replace(/id\$="/g, 'vid="')
+              .replace(/id\$='/g, "vid='")
+              .replace(/id\$=/g, 'vid=')
+              .replace(/vid="([^"]+)"\s*\|\|\s*vid="\1"/g, 'vid="$1"');
+          }
           if (Array.isArray(val)) return val.map(cleanSelector);
           return val;
         }
 
-        for (const r of existingRules) {
-          delete r.actionDelay;
-          if (r.matches !== undefined) r.matches = cleanSelector(r.matches);
-          if (r.anyMatches !== undefined) r.anyMatches = cleanSelector(r.anyMatches);
-          if (r.excludeMatches !== undefined) r.excludeMatches = cleanSelector(r.excludeMatches);
-          if (r.excludeAnyMatches !== undefined) r.excludeAnyMatches = cleanSelector(r.excludeAnyMatches);
-          if (r.key !== undefined && r.key > maxRuleKey) {
-            maxRuleKey = r.key;
-          }
+        function cleanRule(r) {
+          const cloned = JSON.parse(JSON.stringify(r));
+          delete cloned.actionDelay;
+          if (cloned.matches !== undefined) cloned.matches = cleanSelector(cloned.matches);
+          if (cloned.anyMatches !== undefined) cloned.anyMatches = cleanSelector(cloned.anyMatches);
+          if (cloned.excludeMatches !== undefined) cloned.excludeMatches = cleanSelector(cloned.excludeMatches);
+          if (cloned.excludeAnyMatches !== undefined) cloned.excludeAnyMatches = cleanSelector(cloned.excludeAnyMatches);
+          return cloned;
         }
-        
-        const combinedMatch = '[visibleToUser=true][width<500 && height<300][id$="tt_splash_skip_btn" || vid="tt_splash_skip_btn" || id$="splash_skip" || vid="splash_skip" || id$="ksad_splash_skip_view" || vid="ksad_splash_skip_view" || id$="btn_skip" || vid="btn_skip" || id$="tv_skip" || vid="tv_skip" || id$="ll_skip" || vid="ll_skip" || id$="rl_skip" || vid="rl_skip" || id$="skip_btn" || vid="skip_btn" || id$="id_skip_layout" || vid="id_skip_layout" || id$="id_skip_button" || vid="id_skip_button" || id$="id_skip_text" || vid="id_skip_text" || id$="stv_skip" || vid="stv_skip" || id$="sll_skip" || vid="sll_skip" || id$="flash_screen_skip" || vid="flash_screen_skip" || id$="flash_screen_countdown_skip" || vid="flash_screen_countdown_skip" || id$="prologue_splash_skip_text" || vid="prologue_splash_skip_text" || id$="skip_ad_btn" || vid="skip_ad_btn" || id$="cj_splash_skip_ll" || vid="cj_splash_skip_ll" || id$="cj_splash_skip_text" || vid="cj_splash_skip_text" || id$="anythink_myoffer_splash_skip" || vid="anythink_myoffer_splash_skip" || id$="bootimage_ad_pop_skip" || vid="bootimage_ad_pop_skip" || id$="public_skip" || vid="public_skip" || id$="boot_skip" || vid="boot_skip" || id$="tb_bg_ad_skip" || vid="tb_bg_ad_skip" || id$="noah_native_splash_skip" || vid="noah_native_splash_skip" || id$="oper_skip" || vid="oper_skip" || id$="km_splash_skip_space" || vid="km_splash_skip_space"]';
-        
-        const newRule = {
-          key: Math.max(existingRules.length, maxRuleKey + 1),
-          matches: combinedMatch,
+
+        function isRedundant(r) {
+          const str = JSON.stringify(r);
+          // Old combined rule from v5
+          if (str.includes('km_splash_skip_space') && str.includes('tt_splash_skip_btn')) return true;
+          // Duplicate of rule 0
+          if (r.matches === FAST_ID_SELECTOR) return true;
+          // Duplicate of rule 1
+          if (r.matches === FAST_TEXT_SELECTOR) return true;
+          // Redundant simple text skip without extra filters or special hierarchy
+          if (typeof r.matches === 'string') {
+            const m = r.matches;
+            const isSimpleText = m.startsWith('[text*="跳过"') &&
+              !m.includes('<') && !m.includes('>') && !m.includes('+') && !m.includes('-') &&
+              !m.includes('vid=') && !m.includes('id=') && !m.includes('desc=') && !m.includes('name=');
+            const hasExtra = r.position || r.action || r.excludeActivityIds || r.activityIds;
+            if (isSimpleText && !hasExtra) return true;
+          }
+          return false;
+        }
+
+        const extraRules = existingRules
+          .map(cleanRule)
+          .filter(r => !isRedundant(r));
+
+        const rule0 = {
+          key: 0,
+          matches: FAST_ID_SELECTOR,
           actionCd: 2000
         };
-        
-        group.rules = [...existingRules, newRule];
+
+        const rule1 = {
+          key: 1,
+          matches: FAST_TEXT_SELECTOR,
+          actionCd: 2000
+        };
+
+        const reKeyedExtra = extraRules.map((r, idx) => {
+          r.key = idx + 2;
+          return r;
+        });
+
+        group.rules = [rule0, rule1, ...reKeyedExtra];
+
+        // Ensure absolutely no id$= remains anywhere in the group
+        const cleanedStr = JSON.stringify(group).replace(/id\$=/g, 'vid=');
+        const cleanedGroup = JSON.parse(cleanedStr);
+        Object.assign(group, cleanedGroup);
       }
     }
   }
@@ -1635,7 +1791,7 @@ async function main() {
   const customSubscription = {
     id: 88888,
     name: 'vivo X100 Pro 本机专属定制',
-    version: 5,
+    version: 6,
     author: 'wang111928',
     supportUri: 'https://github.com/wang111928/gkd-subscription',
     checkUpdateUrl: 'https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5',
@@ -1651,7 +1807,7 @@ async function main() {
   const versionFile = path.join(DIST_DIR, 'gkd.version.json5');
   const versionData = {
     id: 88888,
-    version: 5,
+    version: 6,
     date: new Date().toISOString().split('T')[0]
   };
   fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2), 'utf8');
@@ -1711,6 +1867,30 @@ async function main() {
         const groupStr = JSON.stringify(group);
         if (groupStr.includes('childCount=0')) {
           throw new Error(`Verification failed: childCount=0 detected in splash group "${group.name}" of ${target.id}`);
+        }
+      }
+    }
+  }
+
+  // Ensure splash groups comply with strict fastQuery specification:
+  // 1. Rule 0 must start with '[vid='
+  // 2. Absolutely 0 residue of 'id$=' in any splash group
+  for (const target of allTargets) {
+    for (const group of target.groups || []) {
+      if (group.name && group.name.includes('开屏')) {
+        const rules = Array.isArray(group.rules) ? group.rules : (group.rules ? [group.rules] : []);
+        if (rules.length === 0) {
+          throw new Error(`Verification failed: Splash group "${group.name}" in ${target.id} has no rules`);
+        }
+        const rule0 = rules[0];
+        const rule0Selector = typeof rule0.matches === 'string' ? rule0.matches : (Array.isArray(rule0.matches) ? rule0.matches[0] : '');
+        if (!rule0Selector.startsWith('[vid=')) {
+          throw new Error(`Verification failed: Splash group "${group.name}" in ${target.id} rule 0 does not start with '[vid=' (got: "${rule0Selector.substring(0, 30)}...")`);
+        }
+
+        const groupStr = JSON.stringify(group);
+        if (groupStr.includes('id$=')) {
+          throw new Error(`Verification failed: Residue of 'id$=' detected in splash group "${group.name}" of ${target.id}`);
         }
       }
     }

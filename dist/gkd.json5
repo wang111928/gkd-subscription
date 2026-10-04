@@ -1,7 +1,7 @@
 {
   "id": 88888,
   "name": "vivo X100 Pro 本机专属定制",
-  "version": 5,
+  "version": 6,
   "author": "wang111928",
   "supportUri": "https://github.com/wang111928/gkd-subscription",
   "checkUpdateUrl": "https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.version.json5",
@@ -80,11 +80,21 @@
       "rules": [
         {
           "key": 0,
+          "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+          "actionCd": 2000
+        },
+        {
+          "key": 1,
+          "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+          "actionCd": 2000
+        },
+        {
+          "key": 2,
           "excludeMatches": "([text=\"Submit\" || text=\"书签\" || text=\"NEXT\" || text=\"覆盖\" || text*=\"阅读并同意\" || text=\"跳过空白\"][visibleToUser=true]) || ([text*=\"搜索\" || text=\"历史记录\" || text$=\"在搜\"][text.length>3 && text.length<7][visibleToUser=true]) || ([text$=\"设置\" || text*=\"跳过片\"][text.length<10][visibleToUser=true]) || ([text^=\"选择\"][text*=\"偏好\" || text*=\"兴趣\" || text*=\"喜好\" || text*=\"行业\"][text.length<10][visibleToUser=true])",
           "anyMatches": [
             "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
             "@[name$=\"View\" || name$=\"LinearLayout\"][clickable=true][childCount<2][width<300 && height<200] - [text=\"互动广告\"][visibleToUser=true]",
-            "[visibleToUser=true][width<500 && height<300][(text.length<10 && (text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\" || text~=\"(?is).*skip.*\") && text!*=\"视频\" && text!*=\"片头\" && text!*=\"片尾\") || (vid~=\"(?is).*skip.*\" && vid!~=\"(?is).*video.*\" && vid!~=\"(?is).*head.*\" && vid!~=\"(?is).*tail.*\" && !(text=\"帮助\") && !(text=\"取消\") && !(text*=\"退出\")) || id$=\"tt_splash_skip_btn\" || (desc.length<10 && (desc*=\"跳过\" || desc*=\"跳過\" || desc~=\"(?is).*skip.*\"))]"
+            "[visibleToUser=true][width<500 && height<300][(text.length<10 && (text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\" || text~=\"(?is).*skip.*\") && text!*=\"视频\" && text!*=\"片头\" && text!*=\"片尾\") || (vid~=\"(?is).*skip.*\" && vid!~=\"(?is).*video.*\" && vid!~=\"(?is).*head.*\" && vid!~=\"(?is).*tail.*\" && !(text=\"帮助\") && !(text=\"取消\") && !(text*=\"退出\")) || vid=\"tt_splash_skip_btn\" || (desc.length<10 && (desc*=\"跳过\" || desc*=\"跳過\" || desc~=\"(?is).*skip.*\"))]"
           ],
           "snapshotUrls": [
             "https://i.gkd.li/i/21617612",
@@ -119,7 +129,7 @@
           ]
         },
         {
-          "key": 1,
+          "key": 3,
           "anyMatches": [
             "@View[text=null][clickable=true][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)] <n FrameLayout[childCount>2][text=null][desc=null] >(n+6) [text*=\"第三方应用\" || text*=\"扭动手机\" || text*=\"点击或上滑\" || text*=\"省钱好物\" || text*=\"扭一扭\"][visibleToUser=true]",
             "FrameLayout > FrameLayout[childCount>2][text=null][desc=null] > @View[text=null][clickable=true][visibleToUser=true][width<200&&height<200] +(1,2) TextView[index=parent.childCount.minus(1)][visibleToUser=true]"
@@ -132,11 +142,6 @@
             "https://i.gkd.li/i/20883248",
             "https://i.gkd.li/i/23549504"
           ]
-        },
-        {
-          "key": 2,
-          "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-          "actionCd": 2000
         }
       ],
       "apps": [
@@ -4932,12 +4937,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -5194,7 +5199,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -5207,7 +5212,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -5266,12 +5271,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -5286,7 +5291,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ]
@@ -5298,7 +5303,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ]
@@ -6207,12 +6212,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -6412,7 +6417,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -6425,7 +6430,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -6449,18 +6454,12 @@
           "rules": [
             {
               "key": 0,
-              "anyMatches": [
-                "[id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\"][visibleToUser=true]",
-                "[id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\"][visibleToUser=true]",
-                "[id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\"][visibleToUser=true]",
-                "[id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\"][visibleToUser=true]",
-                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-              ],
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -6501,14 +6500,14 @@
             {
               "key": 0,
               "anyMatches": [
-                "[vid=\"banner_item_close\" || id$=\"banner_item_close\"][visibleToUser=true]",
-                "[vid=\"ic_operation_banner_close\" || id$=\"ic_operation_banner_close\"][visibleToUser=true]",
-                "[vid=\"ad_card_close\" || id$=\"ad_card_close\"][visibleToUser=true]",
-                "[vid=\"all_tool_banner_close\" || id$=\"all_tool_banner_close\"][visibleToUser=true]",
-                "[vid=\"business_operate_close\" || id$=\"business_operate_close\"][visibleToUser=true]",
-                "[vid=\"close_btn\" || id$=\"close_btn\"][visibleToUser=true]",
-                "[vid=\"ad_close\" || id$=\"ad_close\"][visibleToUser=true]",
-                "[vid=\"iv_close\" || id$=\"iv_close\"][visibleToUser=true]",
+                "[vid=\"banner_item_close\"][visibleToUser=true]",
+                "[vid=\"ic_operation_banner_close\"][visibleToUser=true]",
+                "[vid=\"ad_card_close\"][visibleToUser=true]",
+                "[vid=\"all_tool_banner_close\"][visibleToUser=true]",
+                "[vid=\"business_operate_close\"][visibleToUser=true]",
+                "[vid=\"close_btn\"][visibleToUser=true]",
+                "[vid=\"ad_close\"][visibleToUser=true]",
+                "[vid=\"iv_close\"][visibleToUser=true]",
                 "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
               ],
               "actionCd": 2000
@@ -6710,12 +6709,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -6935,7 +6934,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -6948,7 +6947,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -6972,12 +6971,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -7070,7 +7069,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -7083,7 +7082,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -7141,18 +7140,24 @@
           "priorityTime": 5000,
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "fastQuery": true,
               "matches": [
                 "[vid=\"ll_load\"][visibleToUser=true]",
                 "[vid=\"skip\"][visibleToUser=true]"
               ],
               "exampleUrls": "https://e.gkd.li/69567942-f5a1-40f0-b4b6-7f8bf2348052",
-              "snapshotUrls": "https://i.gkd.li/i/20649289"
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              "snapshotUrls": "https://i.gkd.li/i/20649289",
+              "key": 2
             }
           ],
           "order": -10,
@@ -7212,16 +7217,22 @@
           "priorityTime": 5000,
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": [
                 "https://i.gkd.li/i/15084759",
                 "https://i.gkd.li/i/15079224"
-              ]
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              ],
+              "key": 2
             }
           ],
           "order": -10,
@@ -7411,12 +7422,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -7884,7 +7895,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -7897,7 +7908,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -7921,12 +7932,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -8028,7 +8039,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -8041,7 +8052,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -8574,7 +8585,17 @@
           "activityIds": "com.alipay.mobile.nebulax.xriver.activity.XRiverActivity$",
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 2,
               "name": "①点击[跳过]",
               "matches": "@View[id=null][text=null][visibleToUser=true] < ViewGroup[id=null][text=null][childCount=1][index=parent.childCount.minus(1)] <(7,8) ViewGroup <2 ViewGroup < ViewGroup < LinearLayout < RelativeLayout <(1,2) [id=\"android:id/content\"]",
               "exampleUrls": "https://e.gkd.li/a243e31f-f1b5-4689-8d1a-c53250be651e",
@@ -8584,7 +8605,7 @@
               ]
             },
             {
-              "key": 2,
+              "key": 3,
               "name": "②坐标点击[关闭]",
               "position": {
                 "left": "width * 0.2490",
@@ -8595,11 +8616,6 @@
                 "https://i.gkd.li/i/28133622",
                 "https://i.gkd.li/i/28337298"
               ]
-            },
-            {
-              "key": 3,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -8833,12 +8849,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -8912,7 +8928,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -8925,7 +8941,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -9486,12 +9502,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -9795,7 +9811,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -9808,7 +9824,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -9832,12 +9848,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -9986,7 +10002,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -9999,7 +10015,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -10020,15 +10036,21 @@
           "priorityTime": 5000,
           "rules": [
             {
-              "fastQuery": true,
-              "matches": "[vid=\"splash_skip_text\"]",
-              "exampleUrls": "https://e.gkd.li/5d393b9b-c327-4429-9759-8c18a097453a",
-              "snapshotUrls": "https://i.gkd.li/i/17631261"
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
+            },
+            {
+              "fastQuery": true,
+              "matches": "[vid=\"splash_skip_text\"]",
+              "exampleUrls": "https://e.gkd.li/5d393b9b-c327-4429-9759-8c18a097453a",
+              "snapshotUrls": "https://i.gkd.li/i/17631261",
+              "key": 2
             }
           ],
           "order": -10,
@@ -10515,15 +10537,12 @@
           "rules": [
             {
               "key": 0,
-              "anyMatches": [
-                "[id$=\"skip_view\" || vid=\"skip_view\" || id$=\"background_splash_skip\" || vid=\"background_splash_skip\"][visibleToUser=true]",
-                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-              ],
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -10539,7 +10558,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"banner_close_img\" || vid=\"banner_close_img\" || id$=\"banner_close_img1\" || vid=\"banner_close_img1\" || id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"banner_close_img\" || vid=\"banner_close_img1\" || vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -10552,7 +10571,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"float_image_close\" || vid=\"float_image_close\" || id$=\"close_black_icon\" || vid=\"close_black_icon\" || id$=\"close_circle\" || vid=\"close_circle\" || text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[vid=\"float_image_close\" || vid=\"close_black_icon\" || vid=\"close_circle\" || text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -10573,18 +10592,24 @@
           "priorityTime": 5000,
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "fastQuery": true,
               "matches": "[vid=\"tv_main_splash_skip\" || vid=\"tv_skip\"][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/9a9b71b2-0c52-4623-b53b-6dd07d0cbe7c",
               "snapshotUrls": [
                 "https://i.gkd.li/i/17580273",
                 "https://i.gkd.li/i/17656103"
-              ]
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              ],
+              "key": 2
             }
           ],
           "order": -10,
@@ -10623,12 +10648,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -10655,7 +10680,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -10668,7 +10693,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -10691,6 +10716,16 @@
           "rules": [
             {
               "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 2,
               "excludeActivityIds": [
                 ".music.biz.setting.activity.SettingActivity",
                 ".music.biz.search.activity.SearchActivity",
@@ -10706,11 +10741,6 @@
                 "https://i.gkd.li/i/16318423",
                 "https://i.gkd.li/i/30857162"
               ]
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -10969,12 +10999,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -10989,7 +11019,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ]
@@ -11001,7 +11031,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ]
@@ -11249,12 +11279,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -11286,7 +11316,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -11299,7 +11329,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -11323,12 +11353,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -11421,7 +11451,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -11434,7 +11464,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -11458,12 +11488,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -11792,7 +11822,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -11805,7 +11835,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -11829,12 +11859,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -11907,7 +11937,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -11920,7 +11950,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -11941,17 +11971,23 @@
           "priorityTime": 5000,
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "fastQuery": true,
               "excludeActivityIds": ".search.activity.SearchResultActivity",
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "exampleUrls": "https://e.gkd.li/202942ce-259c-4b9d-b3b3-06afbac8145f",
               "snapshotUrls": "https://i.gkd.li/i/13216121",
-              "excludeSnapshotUrls": "https://i.gkd.li/i/17811608"
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              "excludeSnapshotUrls": "https://i.gkd.li/i/17811608",
+              "key": 2
             }
           ],
           "order": -10,
@@ -12735,12 +12771,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -13052,7 +13088,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -13065,7 +13101,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -13089,12 +13125,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -13529,7 +13565,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -13542,7 +13578,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -13566,12 +13602,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -13648,7 +13684,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -13661,7 +13697,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -13685,12 +13721,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -13705,7 +13741,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ]
@@ -13717,7 +13753,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ]
@@ -14098,6 +14134,16 @@
           "rules": [
             {
               "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 2,
               "matches": [
                 "[text=\"广告\" || text=\"廣告\"][visibleToUser=true]",
                 "[text=\"跳过\" || text=\"跳過\"][visibleToUser=true]"
@@ -14111,7 +14157,7 @@
               ]
             },
             {
-              "key": 1,
+              "key": 3,
               "matchRoot": true,
               "actionCd": 500,
               "matches": "@TextView[text*=\"跳过\"][text.length<10][height<150] <<(25-n) FrameLayout[childCount=2] <(1,2) * < [id=\"android:id/content\"]",
@@ -14119,11 +14165,6 @@
                 "https://i.gkd.li/i/26677309",
                 "https://i.gkd.li/i/26747393"
               ]
-            },
-            {
-              "key": 2,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -14961,6 +15002,16 @@
           "priorityTime": 5000,
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "excludeActivityIds": [
                 ".activity.ChatActivity",
                 ".search.activity.UniteSearchActivity"
@@ -14978,12 +15029,7 @@
                 "https://i.gkd.li/i/14341023",
                 "https://i.gkd.li/i/15334565"
               ],
-              "key": 0
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              "key": 2
             }
           ],
           "order": -10,
@@ -15199,6 +15245,16 @@
           "rules": [
             {
               "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 2,
               "activityIds": [
                 ".mini.appbrand.ui.AppBrandUI",
                 ".activity.miniaio.MiniChatActivity"
@@ -15212,11 +15268,6 @@
                 "https://i.gkd.li/i/12919195",
                 "https://i.gkd.li/i/15130235"
               ]
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
             }
           ],
           "order": -10,
@@ -15678,15 +15729,21 @@
           "priorityTime": 5000,
           "rules": [
             {
-              "fastQuery": true,
-              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
-              "exampleUrls": "https://e.gkd.li/6bbf28ed-9e78-4006-9225-49c07954ee45",
-              "snapshotUrls": "https://i.gkd.li/i/25207240"
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
+            },
+            {
+              "fastQuery": true,
+              "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
+              "exampleUrls": "https://e.gkd.li/6bbf28ed-9e78-4006-9225-49c07954ee45",
+              "snapshotUrls": "https://i.gkd.li/i/25207240",
+              "key": 2
             }
           ],
           "order": -10,
@@ -16136,12 +16193,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -16156,7 +16213,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ]
@@ -16168,7 +16225,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ]
@@ -16309,16 +16366,22 @@
           "priorityTime": 5000,
           "rules": [
             {
+              "key": 0,
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
+              "key": 1,
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
+              "actionCd": 2000
+            },
+            {
               "fastQuery": true,
               "excludeActivityIds": ".activity.NewPageActivity",
               "matches": "[text*=\"跳过\"][text.length<10][width<500 && height<300][visibleToUser=true]",
               "snapshotUrls": "https://i.gkd.li/i/25691473",
-              "excludeSnapshotUrls": "https://i.gkd.li/i/25691480"
-            },
-            {
-              "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
-              "actionCd": 2000
+              "excludeSnapshotUrls": "https://i.gkd.li/i/25691480",
+              "key": 2
             }
           ],
           "order": -10,
@@ -16999,20 +17062,12 @@
           "rules": [
             {
               "key": 0,
-              "anyMatches": [
-                "[id$=\"id_skip_layout\" || vid=\"id_skip_layout\"][visibleToUser=true]",
-                "[id$=\"id_skip_button\" || vid=\"id_skip_button\"][visibleToUser=true]",
-                "[id$=\"id_skip_text\" || vid=\"id_skip_text\"][visibleToUser=true]",
-                "[id$=\"stv_skip\" || vid=\"stv_skip\"][visibleToUser=true]",
-                "[id$=\"sll_skip\" || vid=\"sll_skip\"][visibleToUser=true]",
-                "[id$=\"ksad_skip_view\" || vid=\"ksad_skip_view\"][visibleToUser=true]",
-                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-              ],
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -17095,13 +17150,13 @@
             {
               "key": 0,
               "anyMatches": [
-                "[vid=\"banner_close_icon\" || id$=\"banner_close_icon\"][visibleToUser=true]",
-                "[vid=\"close_search_middle\" || id$=\"close_search_middle\"][visibleToUser=true]",
-                "[vid=\"id_floating_close\" || id$=\"id_floating_close\"][visibleToUser=true]",
-                "[vid=\"common_banner_close\" || id$=\"common_banner_close\"][visibleToUser=true]",
-                "[vid=\"iv_close_ad\" || id$=\"iv_close_ad\"][visibleToUser=true]",
-                "[vid=\"close\" || id$=\"close\" || vid=\"iv_close\" || id$=\"iv_close\" || vid=\"ad_close\" || id$=\"ad_close\" || vid=\"close_icon\" || id$=\"close_icon\" || vid=\"close_m_image_left_text_right_app_compliance\"][visibleToUser=true]",
-                "[id$=\"tt_dislike_icon\" || vid=\"tt_dislike_icon\" || id$=\"ksad_ad_dislike\" || vid=\"ksad_ad_dislike\"][visibleToUser=true]",
+                "[vid=\"banner_close_icon\"][visibleToUser=true]",
+                "[vid=\"close_search_middle\"][visibleToUser=true]",
+                "[vid=\"id_floating_close\"][visibleToUser=true]",
+                "[vid=\"common_banner_close\"][visibleToUser=true]",
+                "[vid=\"iv_close_ad\"][visibleToUser=true]",
+                "[vid=\"close\" || vid=\"iv_close\" || vid=\"ad_close\" || vid=\"close_icon\" || vid=\"close_m_image_left_text_right_app_compliance\"][visibleToUser=true]",
+                "[vid=\"tt_dislike_icon\" || vid=\"ksad_ad_dislike\"][visibleToUser=true]",
                 "@ImageView[clickable=true][visibleToUser=true] - [text=\"广告\"]"
               ],
               "actionCd": 2000
@@ -17231,19 +17286,12 @@
           "rules": [
             {
               "key": 0,
-              "anyMatches": [
-                "[id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\"][visibleToUser=true]",
-                "[id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\"][visibleToUser=true]",
-                "[id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\"][visibleToUser=true]",
-                "[id$=\"jad_splash_skip_btn\" || vid=\"jad_splash_skip_btn\"][visibleToUser=true]",
-                "[id$=\"ksad_splash_skip_left_view\" || vid=\"ksad_splash_skip_left_view\"][visibleToUser=true]",
-                "[text*=\"跳过\"][text.length<=10][visibleToUser=true]"
-              ],
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -17346,10 +17394,10 @@
             {
               "key": 0,
               "anyMatches": [
-                "[id$=\"beizi_banner_close_iv\" || vid=\"beizi_banner_close_iv\"][visibleToUser=true]",
-                "[id$=\"beizi_banner_da_close\" || vid=\"beizi_banner_da_close\"][visibleToUser=true]",
-                "[id$=\"channel_banner_close_iv\" || vid=\"channel_banner_close_iv\"][visibleToUser=true]",
-                "[id$=\"iv_banner_close\" || vid=\"iv_banner_close\"][visibleToUser=true]"
+                "[vid=\"beizi_banner_close_iv\"][visibleToUser=true]",
+                "[vid=\"beizi_banner_da_close\"][visibleToUser=true]",
+                "[vid=\"channel_banner_close_iv\"][visibleToUser=true]",
+                "[vid=\"iv_banner_close\"][visibleToUser=true]"
               ],
               "actionCd": 2000
             }
@@ -17364,7 +17412,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"cj_interstitial_close_ll\" || id$=\"channel_insert_close_iv\" || id$=\"beizi_complaint_dialog_close\" || id$=\"close\" || id$=\"dialog_close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[vid=\"cj_interstitial_close_ll\" || vid=\"channel_insert_close_iv\" || vid=\"beizi_complaint_dialog_close\" || vid=\"close\" || vid=\"dialog_close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
@@ -17504,12 +17552,12 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"跳过\"][text.length<=10][visibleToUser=true]",
+              "matches": "[vid=\"tt_splash_skip_btn\" || vid=\"splash_skip\" || vid=\"ksad_splash_skip_view\" || vid=\"btn_skip\" || vid=\"tv_skip\" || vid=\"ll_skip\" || vid=\"rl_skip\" || vid=\"skip_btn\" || vid=\"id_skip_layout\" || vid=\"id_skip_button\" || vid=\"id_skip_text\" || vid=\"stv_skip\" || vid=\"sll_skip\" || vid=\"flash_screen_skip\" || vid=\"flash_screen_countdown_skip\" || vid=\"prologue_splash_skip_text\" || vid=\"skip_ad_btn\" || vid=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_text\" || vid=\"anythink_myoffer_splash_skip\" || vid=\"bootimage_ad_pop_skip\" || vid=\"public_skip\" || vid=\"boot_skip\" || vid=\"tb_bg_ad_skip\" || vid=\"noah_native_splash_skip\" || vid=\"oper_skip\" || vid=\"km_splash_skip_space\" || vid=\"background_splash_skip\" || vid=\"skip_view\" || vid=\"count_down\"][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             },
             {
               "key": 1,
-              "matches": "[visibleToUser=true][width<500 && height<300][id$=\"tt_splash_skip_btn\" || vid=\"tt_splash_skip_btn\" || id$=\"splash_skip\" || vid=\"splash_skip\" || id$=\"ksad_splash_skip_view\" || vid=\"ksad_splash_skip_view\" || id$=\"btn_skip\" || vid=\"btn_skip\" || id$=\"tv_skip\" || vid=\"tv_skip\" || id$=\"ll_skip\" || vid=\"ll_skip\" || id$=\"rl_skip\" || vid=\"rl_skip\" || id$=\"skip_btn\" || vid=\"skip_btn\" || id$=\"id_skip_layout\" || vid=\"id_skip_layout\" || id$=\"id_skip_button\" || vid=\"id_skip_button\" || id$=\"id_skip_text\" || vid=\"id_skip_text\" || id$=\"stv_skip\" || vid=\"stv_skip\" || id$=\"sll_skip\" || vid=\"sll_skip\" || id$=\"flash_screen_skip\" || vid=\"flash_screen_skip\" || id$=\"flash_screen_countdown_skip\" || vid=\"flash_screen_countdown_skip\" || id$=\"prologue_splash_skip_text\" || vid=\"prologue_splash_skip_text\" || id$=\"skip_ad_btn\" || vid=\"skip_ad_btn\" || id$=\"cj_splash_skip_ll\" || vid=\"cj_splash_skip_ll\" || id$=\"cj_splash_skip_text\" || vid=\"cj_splash_skip_text\" || id$=\"anythink_myoffer_splash_skip\" || vid=\"anythink_myoffer_splash_skip\" || id$=\"bootimage_ad_pop_skip\" || vid=\"bootimage_ad_pop_skip\" || id$=\"public_skip\" || vid=\"public_skip\" || id$=\"boot_skip\" || vid=\"boot_skip\" || id$=\"tb_bg_ad_skip\" || vid=\"tb_bg_ad_skip\" || id$=\"noah_native_splash_skip\" || vid=\"noah_native_splash_skip\" || id$=\"oper_skip\" || vid=\"oper_skip\" || id$=\"km_splash_skip_space\" || vid=\"km_splash_skip_space\"]",
+              "matches": "[text*=\"跳过\" || text*=\"跳 过\" || text*=\"跳過\"][text.length<=10][visibleToUser=true][width<500 && height<300]",
               "actionCd": 2000
             }
           ],
@@ -18384,7 +18432,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[id$=\"close\" || vid=\"close\"][visibleToUser=true]",
+              "matches": "[vid=\"close\"][visibleToUser=true]",
               "actionCd": 2000
             }
           ],
@@ -18397,7 +18445,7 @@
           "rules": [
             {
               "key": 0,
-              "matches": "[text*=\"关闭\" || id$=\"close\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
+              "matches": "[text*=\"关闭\" || vid=\"close\"][visibleToUser=true][width<500 && height<500]",
               "actionCd": 2000
             }
           ],
