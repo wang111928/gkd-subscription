@@ -10,9 +10,9 @@
   ```text
   https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@main/dist/gkd.json5
   ```
-- **固定 v7 版本直链 (永不产生缓存延迟)**:
+- **固定 v8 版本直链 (永不产生缓存延迟)**:
   ```text
-  https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@v7/dist/gkd.json5
+  https://cdn.jsdelivr.net/gh/wang111928/gkd-subscription@v8/dist/gkd.json5
   ```
 - **GitHub Raw 直链**:
   ```text
@@ -22,7 +22,7 @@
 ## 订阅信息
 
 - **ID**: `88888`
-- **版本**: `v7` (大学搜题酱 1.5K 屏开屏广告秒跳根治 + 志愿汇弹窗浮标横幅彻底清剿与调度优化)
+- **版本**: `v8` (全 SDK 开屏盲区补全：美数/倍孜/八爪鱼/穿山甲聚合/天目/京东联盟 + 志愿汇 3000ms 黄金生命周期调优)
 - **覆盖应用**: 78 款已装核心应用，548 个规则组，918 条规则
 - **性能优化**: 严格符合 GKD 官方 fastQuery 规范（精确 `vid` 聚集抢跑首层，[width<600 && height<400] 宽屏放宽），毫秒级优先级反转结构，纯文本兜底，全量防误触 (`visibleToUser: true`)，金融支付受保护黑名单全量保留。
 
